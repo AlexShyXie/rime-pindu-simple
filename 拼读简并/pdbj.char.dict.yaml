@@ -1,0 +1,80 @@
+---
+name: pdbj.char
+version: 20250409
+use_preset_vocabulary: false
+sort: original
+columns:
+  - text
+  - code
+  - stem
+...
+
+的	abZ	abZa
+了	obZ	obZa
+在	isZ	isZa
+是	caZ	caZa
+和	niZ	niZa
+一	bdZ	bdZa
+这	eeZ	eeZa
+他	soZ	soZa
+我	gkZ	gkZa
+不	haZ	haZa
+就	dzZ	dzZa
+地	yaZ	yaZa
+中	ugZ	ugZa
+说	DbZ	DbZa
+人	vrZ	vrZa
+个	reZ	reZa
+对	xmZ	xmZa
+你	KcZ	KcZa
+而	AfZ	AfZa
+与	qcZ	qcZa
+从	VjZ	VjZa
+两	mFZ	mFZa
+去	IaZ	IaZa
+那	BuZ	BuZa
+所	PkZ	PkZa
+小	fAZ	fAZa
+或	teZ	teZa
+看	zhZ	zhZa
+三	JtZ	JtZa
+如	SfZ	SfZa
+其	pfZ	pfZa
+过	keZ	keZa
+并	CpZ	CpZa
+最	EmZ	EmZa
+才	LCZ	LCZa
+出	HdZ	HdZa
+们	llZ	llZa
+成	wjZ	wjZa
+同	MjZ	MjZa
+条	FPZ	FPZa
+法	jHZ	jHZa
+快	TsZ	TsZa
+学	NiZ	NiZa
+句	OaZ	OaZa
+名	GjZ	GjZa
+路	RaZ	RaZa
+跑	QAZ	QAZa
+女	YcZ	YcZa
+批	UdZ	UdZa
+率	WaZ	WaZa
+弄	XpZ	XpZa
+看	ztZ	ztZa
+中	upZ	upZa
+并	CgZ	CgZa
+个	rkZ	rkZa
+过	kbZ	kbZa
+和	neZ	neZa
+们	lrZ	lrZa
+那	BoZ	BoZa
+那	BmZ	BmZa
+跑	QPZ	QPZa
+说	DmZ	DmZa
+同	MpZ	MpZa
+与	qfZ	qfZa
+与	qaZ	qaZa
+这	emZ	emZa
+那	BHZ	BHZa
+那	BeZ	BeZa
+

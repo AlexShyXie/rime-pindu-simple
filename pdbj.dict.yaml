@@ -1,0 +1,31 @@
+---
+name: pdbj
+version: 20241116
+use_preset_vocabulary: false
+sort: original
+import_tables:
+  - pdbj.char
+  - pdbj.charfull
+  - pdbj.wordoneshot
+  - pdbj.wordtwo
+  - pdbj.cz
+  - pdbj.fuhao
+  - pdbj.user
+columns:
+  - text
+  - code
+  - stem
+encoder:
+  exclude_patterns:
+    - '^(Z.Z)$'
+  rules:
+    - length_equal: 2
+      formula: "AaAbAcBaBbBc"
+    - length_equal: 3
+      formula: "AaAbAcBaBbBdCaCbCc"
+    - length_in_range: [4,20]
+      formula: "AaAbAcBaBbBdZaZbZc"
+...
+
+说：“	DbZ
+说：“	Dba

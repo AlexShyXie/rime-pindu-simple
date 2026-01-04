@@ -1,0 +1,80 @@
+---
+name: pdbj.char
+version: 20250409
+use_preset_vocabulary: false
+sort: original
+columns:
+  - text
+  - code
+  - stem
+...
+
+的	abZhZZ	abZa
+了	obZeZZ	obZa
+在	isZMZZ	isZa
+是	caZvZZ	caZa
+和	niZzZZ	niZa
+一	bdZnZZ	bdZa
+这	eeZiZZ	eeZa
+他	soZZeZ	soZa
+我	gkZrZZ	gkZa
+不	haZnZZ	haZa
+就	dzZsZZ	dzZa
+地	yaZMZZ	yaZa
+中	ugZzZZ	ugZa
+说	DbZZdZ	DbZa
+人	vrZUZZ	vrZa
+个	reZvZZ	reZa
+对	xmZbZZ	xmZa
+你	KcZZeZ	KcZa
+而	AfZTZZ	AfZa
+与	qcZnZZ	qcZa
+从	VjZvZZ	VjZa
+两	mFZTZZ	mFZa
+去	IaZMZZ	IaZa
+那	BuZAZZ	BuZa
+所	PkZdZZ	PkZa
+小	fAZDZZ	fAZa
+或	teZrZZ	teZa
+看	zhZcZZ	zhZa
+三	JtZnZZ	JtZa
+如	SfZzZZ	SfZa
+其	pfZhZZ	pfZa
+过	keZiZZ	keZa
+并	CpZhZZ	CpZa
+最	EmZvZZ	EmZa
+才	LCZUZZ	LCZa
+出	HdZTZZ	HdZa
+们	llZZeZ	llZa
+成	wjZrZZ	wjZa
+同	MjZTZZ	MjZa
+条	FPZQZZ	FPZa
+法	jHZZwZ	jHZa
+快	TsZZAZ	TsZa
+学	NiZiZZ	NiZa
+句	OaZhZZ	OaZa
+名	GjZfZZ	GjZa
+路	RaZEZZ	RaZa
+跑	QAZEZZ	QAZa
+女	YcZeZZ	YcZa
+批	UdZZkZ	UdZa
+率	WaZsZZ	WaZa
+弄	XpZgZZ	XpZa
+看	ztZcZZ	ztZa
+中	upZzZZ	upZa
+并	CgZhZZ	CgZa
+个	rkZvZZ	rkZa
+过	kbZiZZ	kbZa
+和	neZzZZ	neZa
+们	lrZZeZ	lrZa
+那	BoZAZZ	BoZa
+那	BmZAZZ	BmZa
+跑	QPZEZZ	QPZa
+说	DmZZdZ	DmZa
+同	MpZTZZ	MpZa
+与	qfZnZZ	qfZa
+与	qaZnZZ	qaZa
+这	emZiZZ	emZa
+那	BHZAZZ	BHZa
+那	BeZAZZ	BeZa
+
