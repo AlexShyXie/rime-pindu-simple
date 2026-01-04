@@ -6,9 +6,8 @@ sort: original
 import_tables:
   - pdbj.char
   - pdbj.charfull
+  - pdbj.word
   - pdbj.wordoneshot
-  - pdbj.wordtwo
-  - pdbj.cz
   - pdbj.fuhao
   - pdbj.user
 columns:
