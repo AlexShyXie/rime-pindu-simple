@@ -4,12 +4,13 @@ version: 20241116
 use_preset_vocabulary: false
 sort: original
 import_tables:
-  - pdbj.char
-  - pdbj.charfull
-  - pdbj.word
-  - pdbj.wordoneshot
-  - pdbj.fuhao
-  - pdbj.user
+  - 'pdbj_dict/pdbj.char'
+  #- pdbj.charfull
+  - 'pdbj_dict/pdbj.charfull_flypy'
+  - 'pdbj_dict/pdbj.word'
+  - 'pdbj_dict/pdbj.wordoneshot'
+  - 'pdbj_dict/pdbj.fuhao'
+  - 'pdbj_dict/pdbj.user'
 columns:
   - text
   - code

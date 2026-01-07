@@ -282,6 +282,8 @@ translator:
   enable_completion: true
   enable_sentence: false
   enable_user_dict: true
+  user_dict: pdbj_simple
+  db_class: tabledb
   enable_encoder: true
   encode_commit_history: true
   max_phrase_length: 7
@@ -815,8 +817,8 @@ translator:
     - xform/vq_/rao4/
     - xform/vn_/ran2/
     - xform/ch_/shan4/
-    - xform/Ae_/o4/
-    - xform/Ai_/o2/
+    - xform/Ae_/o4-e4/
+    - xform/Ai_/o2-e2/
     - xform/bG_/yin3/
     - xform/sE_/tang2/
     - xform/wL_/chao1/
@@ -948,8 +950,8 @@ translator:
     - xform/lk_/mo3/
     - xform/Cd_/bi1/
     - xform/pr_/qin2/
-    - xform/AB_/n4/
-    - xform/Ar_/n2/
+    - xform/AB_/en4/
+    - xform/Ar_/en2/
     - xform/nI_/hou2/
     - xform/Xx_/nuan3/
     - xform/Qr_/pen2/
@@ -959,7 +961,7 @@ translator:
     - xform/mq_/liao4/
     - xform/su_/ta4/
     - xform/sy_/tang1/
-    - xform/Ab_/o1/
+    - xform/Ab_/o1-e1/
     - xform/tc_/hu3/
     - xform/sP_/tao2/
     - xform/ci_/she2/
@@ -1413,7 +1415,7 @@ translator:
     - xform/Rp_/long4/
     - xform/eP_/zhao2/
     - xform/AH_/a3/
-    - xform/AG_/n3/
+    - xform/AG_/en3/
     - xform/Rg_/long1/
     - xform/DJ_/shui2/
     - xform/he_/bo4/
@@ -1477,7 +1479,7 @@ translator:
     - xform/lM_/mou1/
     - xform/Ll_/cen1/
     - xform/Eb_/zuo1/
-    - xform/Ak_/e3/
+    - xform/Ak_/o3-e3/
     - xform/nv_/hang4/
     - xform/Ce_/bie4/
     - xform/nH_/ha3/
@@ -1562,6 +1564,7 @@ translator:
     - xform/sg_/teng1/
     - xform/Bv_/nang4/
     - xform/RG_/lun3/
+    - xform/uQ_/zhuai3/
     - xform/.._/X/
     - xform ([aeiou])(ng?|r)([1234]) $1$3$2
     - xform ([aeo])([iuo])([1234]) $1$3$2
