@@ -134,6 +134,7 @@ chord_composer:
     # qi eng4
     - xform/<as>/p/
     - xform/<lj>/p/
+    - xform/<lkj>/p/  # 飞键
     # yu ao4
     - xform/<sf>/q/
     - xform/<sdf>/q/ # 飞键
@@ -156,6 +157,7 @@ chord_composer:
     # r ang4
     - xform/<er>/v/
     - xform/<Dm>/v/
+    - xform/<DCm>/v/  # 飞键
     # ch ou3
     - xform/<sd>/w/
     - xform/<pk>/w/
