@@ -45,10 +45,13 @@ def find_wordsIncode_with_keyword(filename, keyword):
 # %%使用示例
 
 filename = r'E:\Downloads\jichu.dict.yaml'
-keyword = 'ńg'
+filename = r'E:\Downloads\output_codes.txt'
 
-# results = find_words_with_keyword(filename, keyword)
-results = find_wordsIncode_with_keyword(filename, keyword)
+keyword = 'ńg'
+keyword = '我们'
+
+results = find_words_with_keyword(filename, keyword)
+# results = find_wordsIncode_with_keyword(filename, keyword)
 print(f"找到 {len(results)} 个包含'{keyword}'的词:\n")
 for word, code in results:
     print(f"{word}\t{code}")
