@@ -94,6 +94,7 @@ chord_composer:
     # w eng1
     - xform/<cv>/g/
     - xform/<xv>/g/
+    - xform/<xcv>/g/ # 飞
     - xform/<Bj>/g/
     # b bu an4
     - xform/<s>/h/
@@ -135,6 +136,7 @@ chord_composer:
     - xform/<lj>/p/
     # yu ao4
     - xform/<sf>/q/
+    - xform/<sdf>/q/ # 飞键
     - xform/<lm>/q/
     # g en2
     - xform/<qt>/r/
@@ -149,6 +151,7 @@ chord_composer:
     - xform/<En>/t/
     # zhu a4
     - xform/<qe>/u/
+    - xform/<qwe>/u/ #3键飞键
     - xform/<m>/u/
     # r ang4
     - xform/<er>/v/
@@ -181,7 +184,9 @@ chord_composer:
     - xform/<BD>/C/
     # shu eng3
     - xform/<zc>/D/
+    - xform/<zxc>/D/ #-飞键
     - xform/<Bk>/D/
+    - xform/<Blk>/D/ #-飞键
     # zu ang2
     - xform/<et>/E/
     - xform/<zd>/E/
@@ -190,11 +195,13 @@ chord_composer:
     # ti ang3
     - xform/<dv>/F/
     - xform/<EC>/F/
+    - xform/<EDC>/F/ 
     # mi en3
     - xform/<wd>/G/
-    - xform/<lk>/G/
+    - xform/<lk>/G/ #-飞键
     # chu a3
     - xform/<ad>/H/
+    - xform/<asd>/H/ # 飞键
     - xform/<C>/H/
     # qu ou2
     - xform/<sg>/I/
@@ -208,6 +215,7 @@ chord_composer:
     # ni ei3
     - xform/<rg>/K/
     - xform/<ok>/K/
+    - xform/<oij>/K/
     # c ao1
     - xform/<fg>/L/
     - xform/<dc>/L/
@@ -234,6 +242,7 @@ chord_composer:
     - xform/<x>/Q/
     - xform/<xg>/Q/
     - xform/<lC>/Q/
+    - xform/<lkm>/Q/ #飞
     # lu ai1
     - xform/<db>/R/
     - xform/<aw>/R/
@@ -241,6 +250,7 @@ chord_composer:
     - xform/<Bn>/R/
     # ru
     - xform/<wr>/S/
+    - xform/<wer>/S/ #飞
     - xform/<iu>/S/
     # ku
     - xform/<af>/T/
@@ -572,7 +582,7 @@ translator:
     - xform/Ff_/ti2/
     - xform/dw_/jiu3/
     - xform/ct_/shan1/
-    - xform/lb_/me1/
+    - xform/lb_/me1-mo1/
     - xform/mf_/li2/
     - xform/xx_/duan3/
     - xform/Hn_/chuan2/
@@ -936,7 +946,7 @@ translator:
     - xform/Ng_/xiong1/
     - xform/Wc_/lv3/
     - xform/on_/lan2/
-    - xform/bb_/yo1/
+    - xform/bb_/yo1-ye1/
     - xform/mh_/lian4/
     - xform/mH_/lia3/
     - xform/Qv_/pang4/
@@ -1564,7 +1574,21 @@ translator:
     - xform/sg_/teng1/
     - xform/Bv_/nang4/
     - xform/RG_/lun3/
+    # 往下是兼容万象拼音添加的一些编码情况，不一定需要用
     - xform/uQ_/zhuai3/
+    - xform/Cj_/biang2/
+    - xform/Lm_/cei4/
+    - xform/LH_/ca3/
+    - xform/yk_/die3/
+    - xform/ye_/die4/
+    - xform/Ad_/er1/
+    - xform/kf_/gu2/
+    - xform/ot_/lan/
+    - xform/my_/mei/
+    - xform/BR_/nai/
+    - xform/Ky_/niang/
+    - xform/Sr_/run2/
+    
     - xform/.._/X/
     - xform ([aeiou])(ng?|r)([1234]) $1$3$2
     - xform ([aeo])([iuo])([1234]) $1$3$2
@@ -1613,7 +1637,16 @@ key_binder:
     - { accept: equal, send: Page_Down, when: has_menu }
     - { when: composing, accept: "Control+p", send: Up }     # ↑
     - { when: composing, accept: "Control+n", send: Down }   # ↓
-
+    - { when: has_menu, accept: 1, send: KP_1 } 
+    - { when: has_menu, accept: 2, send: KP_2 } 
+    - { when: has_menu, accept: 3, send: KP_3 } 
+    - { when: has_menu, accept: 4, send: KP_4 } 
+    - { when: has_menu, accept: 5, send: KP_5 } 
+    - { when: has_menu, accept: 6, send: KP_6 } 
+    - { when: has_menu, accept: 7, send: KP_7 } 
+    - { when: has_menu, accept: 8, send: KP_8 } 
+    - { when: has_menu, accept: 9, send: KP_9 } 
+    
 recognizer:
   patterns:
     punct: '^\\([0-9]0?|[A-Za-z]+)?$'

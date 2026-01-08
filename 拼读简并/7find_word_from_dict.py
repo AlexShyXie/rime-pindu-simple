@@ -42,10 +42,10 @@ def find_wordsIncode_with_keyword(filename, keyword):
                     results.append((word, code))
     
     return results
-# 使用示例
+# %%使用示例
 
 filename = r'E:\Downloads\jichu.dict.yaml'
-keyword = 'bú'
+keyword = 'ńg'
 
 # results = find_words_with_keyword(filename, keyword)
 results = find_wordsIncode_with_keyword(filename, keyword)

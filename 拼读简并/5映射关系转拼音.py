@@ -3,7 +3,7 @@
 import csv
 
 def pinyin_with_tone_correct(pinyin_with_number):
-    """正确转换数字声调为声调符号, 仍然存在问题"""
+    """正确转换数字声调为声调符号"""
     
     # 元音+声调符号映射
     tone_map = {
@@ -30,66 +30,51 @@ def pinyin_with_tone_correct(pinyin_with_number):
     
     # 检查特殊韵母组合
     if 'iu' in base_pinyin:
-        # iu → 声调在 u 上 (例如: niu3 → niǔ)
-        u_idx = base_pinyin.find('u')  # 找到 u 的位置
-        tone_chars = tone_map['u']
-        new_char = tone_chars[tone - 1]
-        base_pinyin = base_pinyin[:u_idx] + new_char + base_pinyin[u_idx+1:]
-        return base_pinyin
-    
-    if 'ui' in base_pinyin:
-        # ui → 声调在 i 上 (例如: dui1 → duī)
-        i_idx = base_pinyin.find('i')  # 找到 i 的位置
-        tone_chars = tone_map['i']
-        new_char = tone_chars[tone - 1]
-        base_pinyin = base_pinyin[:i_idx] + new_char + base_pinyin[i_idx+1:]
-        return base_pinyin
-    
-    # 常规规则：优先级 a > o/e > i/u/v
-    if 'a' in base_pinyin:
-        a_idx = base_pinyin.find('a')
-        tone_chars = tone_map['a']
-        new_char = tone_chars[tone - 1]
-        base_pinyin = base_pinyin[:a_idx] + new_char + base_pinyin[a_idx+1:]
-        return base_pinyin
-    
-    if 'o' in base_pinyin:
-        o_idx = base_pinyin.find('o')
-        tone_chars = tone_map['o']
-        new_char = tone_chars[tone - 1]
-        base_pinyin = base_pinyin[:o_idx] + new_char + base_pinyin[o_idx+1:]
-        return base_pinyin
-    
-    if 'e' in base_pinyin:
-        e_idx = base_pinyin.find('e')
-        tone_chars = tone_map['e']
-        new_char = tone_chars[tone - 1]
-        base_pinyin = base_pinyin[:e_idx] + new_char + base_pinyin[e_idx+1:]
-        return base_pinyin
-    
-    if 'i' in base_pinyin:
-        i_idx = base_pinyin.find('i')
-        tone_chars = tone_map['i']
-        new_char = tone_chars[tone - 1]
-        base_pinyin = base_pinyin[:i_idx] + new_char + base_pinyin[i_idx+1:]
-        return base_pinyin
-    
-    if 'u' in base_pinyin:
         u_idx = base_pinyin.find('u')
         tone_chars = tone_map['u']
         new_char = tone_chars[tone - 1]
         base_pinyin = base_pinyin[:u_idx] + new_char + base_pinyin[u_idx+1:]
-        return base_pinyin
-    
-    if 'v' in base_pinyin:
+    elif 'ui' in base_pinyin:
+        i_idx = base_pinyin.find('i')
+        tone_chars = tone_map['i']
+        new_char = tone_chars[tone - 1]
+        base_pinyin = base_pinyin[:i_idx] + new_char + base_pinyin[i_idx+1:]
+    # 常规规则：优先级 a > o/e > i/u/v
+    elif 'a' in base_pinyin:
+        a_idx = base_pinyin.find('a')
+        tone_chars = tone_map['a']
+        new_char = tone_chars[tone - 1]
+        base_pinyin = base_pinyin[:a_idx] + new_char + base_pinyin[a_idx+1:]
+    elif 'o' in base_pinyin:
+        o_idx = base_pinyin.find('o')
+        tone_chars = tone_map['o']
+        new_char = tone_chars[tone - 1]
+        base_pinyin = base_pinyin[:o_idx] + new_char + base_pinyin[o_idx+1:]
+    elif 'e' in base_pinyin:
+        e_idx = base_pinyin.find('e')
+        tone_chars = tone_map['e']
+        new_char = tone_chars[tone - 1]
+        base_pinyin = base_pinyin[:e_idx] + new_char + base_pinyin[e_idx+1:]
+    elif 'i' in base_pinyin:
+        i_idx = base_pinyin.find('i')
+        tone_chars = tone_map['i']
+        new_char = tone_chars[tone - 1]
+        base_pinyin = base_pinyin[:i_idx] + new_char + base_pinyin[i_idx+1:]
+    elif 'u' in base_pinyin:
+        u_idx = base_pinyin.find('u')
+        tone_chars = tone_map['u']
+        new_char = tone_chars[tone - 1]
+        base_pinyin = base_pinyin[:u_idx] + new_char + base_pinyin[u_idx+1:]
+    elif 'v' in base_pinyin:
         v_idx = base_pinyin.find('v')
         tone_chars = tone_map['v']
         new_char = tone_chars[tone - 1]
         base_pinyin = base_pinyin[:v_idx] + new_char + base_pinyin[v_idx+1:]
-        return base_pinyin
+    
+    # 统一替换所有剩余的 v 为 ü
+    base_pinyin = base_pinyin.replace('v', 'ü')
     
     return base_pinyin
-
 
 def convert_csv_to_tone(input_file, output_file):
     """转换CSV文件中的拼音列"""
@@ -153,13 +138,25 @@ def load_existing_mapping(csv_file):
     return pinyin_to_code, existing_rows
 
 # 轻声列表
+# 轻声列表（已合并你提供的新拼音）
 qingsheng_list = [
     "a", "ba", "bai", "bao", "bei", "bing", "bo", "bu", "cha", "chang", "chao",
     "chen", "cheng", "chi", "chou", "chu", "da", "dai", "dang", "dao", "de",
     "di", "duo", "er", "fa", "fan", "fang", "fen", "fu", "gan", "ge", "gong",
-    "gou", "gu", "guo", "gu", "hai", "han", "he", "hou", "hu", "hua",
-    "huan", "huo", "ji"
+    "gou", "gu", "guo", "hai", "han", "he", "hou", "hu", "hua",
+    "huan", "huo", "ji", "jia", "jiao", "jie", "jing", "jiu", "ju", "kai",
+    "la", "lan", "lao", "le", "lei", "li", "liang", "liao", "lo", "long",
+    "lu", "luo", "lüě", "ma", "man", "me", "mei", "men", "mo", "na", "nai",
+    "nan", "nang", "ne", "ng", "niang", "niu", "nong", "nü", "o", "pa", "po",
+    "qi", "qian", "qiao", "qie", "qing", "qiōng", "rang", "rún", "sang",
+    "shang", "shen", "sheng", "shi", "shou", "shu", "si", "suo", "suò",
+    "ta", "tai", "tan", "tang", "tao", "teng", "ti", "tiao", "tong",
+    "tou", "tu", "tun", "tǔn", "wa", "wei", "wu", "xi", "xia", "xie",
+    "xing", "xu", "ya", "ye", "yi", "ying", "you", "yuan", "zha", "zhan",
+    "zhe", "zheng", "zhi", "zhu", "zi", "zong", "zuo", "gú", "gē", "cǎ",
+    "cèi", "diè", "biáng"
 ]
+
 
 # 生成新行
 def generate_qingsheng_rows(qingsheng_list, pinyin_to_code):

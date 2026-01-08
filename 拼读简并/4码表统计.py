@@ -4,7 +4,8 @@
 from collections import defaultdict
 
 filepath = r'D:\RIME_config\pdbj_dict\pdbj.charfull_flypy.dict.yaml'
-
+filepath = r'D:\RIME_config\pdbj_dict\pdbj.word.dict.yaml'
+# filepath = r'E:\Downloads\output_codes.txt'
 # 直接按文本方式读取
 with open(filepath, 'r', encoding='utf-8') as f:
     lines = f.readlines()
@@ -21,13 +22,15 @@ for line in lines:
         reading_data = True
         continue
     
-    # 只有在"..."之后才读取数据
+    # 只要在"..."之后就读取数据
     if reading_data and line.strip():
         parts = line.split('\t')
-        if len(parts) >= 3:
+        # 至少要有2列
+        if len(parts) >= 2:
             text = parts[0]
             full_code = parts[1]
-            stem = parts[2]
+            # 如果有第3列就用，没有就设为空字符串
+            stem = parts[2] if len(parts) >= 3 else ''
             entries.append((text, full_code, stem))
 
 print(f"成功读取 {len(entries)} 条数据\n")
@@ -42,6 +45,7 @@ for text, full_code, _ in entries:
 # 找出重复的全码
 duplicate_codes = {code: chars for code, chars in code_map.items() if len(chars) > 1}
 
+print(f"IME配置文件路径: {filepath}")
 print("=== 6位全码重复统计（按重复次数排序）===")
 print(f"发现 {len(duplicate_codes)} 个6位全码有重复\n")
 
@@ -57,11 +61,10 @@ for code, chars in sorted_duplicates:
 
 print("=== 汇总 ===")
 print(f"总条目数: {len(entries)}")
-total_6code = len([code for code in code_map.keys()])
+total_6code = len(code_map)
 print(f"唯一6位全码数: {total_6code}")
 print(f"重复6位全码数: {len(duplicate_codes)}")
 print(f"重复率: {len(duplicate_codes)}/{total_6code} ({len(duplicate_codes)/total_6code*100:.2f}%)")
-
 
 # %% 统计612个一击词
 #%%

@@ -151,3 +151,5 @@ if result:
     #save_statistics(radical_to_keys, key_to_radicals, radical_to_chars, key_to_chars)
 else:
     print("分析失败，请检查文件路径和格式")
+
+# %%
