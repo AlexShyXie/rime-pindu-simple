@@ -8,6 +8,7 @@ import_tables:
   #- pdbj.charfull
   - 'pdbj_dict/pdbj.charfull_flypy'
   - 'pdbj_dict/pdbj.word'
+  - 'pdbj_dict/pdbj.wanxiang'
   - 'pdbj_dict/pdbj.wordoneshot'
   - 'pdbj_dict/pdbj.fuhao'
   - 'pdbj_dict/pdbj.user'
