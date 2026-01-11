@@ -9,6 +9,62 @@ columns:
   - stem
 ...
 
+# 一击字，左手+空格上屏的
+而且	AZa
+那么	BZa
+并且	CZa
+说明	DZa
+最后	EZa
+条件	FZa
+名字	GZa
+出现	HZa
+去年	IZa
+三次	JZa
+你的	KZa
+才能	LZa
+同时	MZa
+学习	NZa
+句子	OZa
+所以	PZa
+跑步	QZa
+路线	RZa
+如果	SZa
+快速	TZa
+批评	UZa
+从来	VZa
+率先	WZa
+弄清楚	XZa
+女人	YZa
+但是	aZa
+一般	bZa
+什么	cZa
+就是	dZa
+这个	eZa
+小时	fZa
+我们	gZa
+不是	hZa
+在于	iZa
+法律	jZa
+过程	kZa
+没有	lZa
+两者	mZa
+还是	nZa
+了解	oZa
+其实	pZa
+于是	qZa
+个人	rZa
+他们	sZa
+或者	tZa
+中国	uZa
+人们	vZa
+成为	wZa
+对的	xZa
+地区	yZa
+看到	zZa
+
+# 左右手一击，横竖撇捺折那个
+# 对应ui io op pi pu io
+
 看到	zSZ
 看来	zSZ
 看来	zSa
@@ -55,3 +111,8 @@ columns:
 能不能	BXZ
 能不能	BXa
 
+# 还多余一个y
+选	NYZ
+做	EYZ
+组	EYZ
+组	EYa

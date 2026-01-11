@@ -195,18 +195,18 @@
 
 将远距离按键映射，规避并击中B G T键的使用
 
-| 声介   | 飞键  | 原按键 |
-| ---- | --- | --- |
-| l    | AR  | B   |
-| li   | AE  | BF  |
-| lu   | AW  | BD  |
-| z zi | ZF  | TR  |
-| zu   | ZD  | TE  |
-| c ci | CD  | Gf  |
-| cu   | CS  | Gd  |
-| xu   | XF  | BX  |
-| s si | SR  | VB  |
-| su   | SE  | CB  |
+| 声介  |    飞键     | 原按键 |
+| ---- | ----------- | ------ |
+| l    | AR          | B      |
+| li   | AE          | BF     |
+| lu   | AW          | BD     |
+| z zi | ZF          | TR     |
+| zu   | ZD          | TE     |
+| c ci | CD          | Gf     |
+| cu   | CS          | Gd     |
+| xu   | XF（或XDV） | BX     |
+| s si | SR          | VB     |
+| su   | SE          | CB     |
 
 组四：由于食指和小指同时按下，无名指悬空，是一个非常难受的动作，所有跨一个按键的组合，都添加3字母并击飞键
 | 声介   | 飞键  | 原按键 |
@@ -217,7 +217,7 @@
 | ru   | REW  | RW  |
 | yu   | FDS  | FS  |
 | wu   | VCX  | VX  |
-
+| xu	 | XDV  | BX     |
 
 ### 韵调飞键
 
@@ -227,12 +227,13 @@
 
 越过边界可以调换上下位置，用以改善小拇指指法，共有以下内容
 
-|韵调|飞键|原键|
-|---|---|---|
-|ei1|PH|;Y|
-|ou1|PJ|;U|
-|ai1|;N|/H|
-|ao1|;M|/ J|
+| 韵调 | 飞键 | 原键 |
+| ---- | ---- | ---- |
+| ei1  | PH   | ;Y   |
+| ou1  | PJ   | ;U   |
+| ai1  | ;N   | /H   |
+| ao1  | ;M   | / J  |
+
 
 组二（建议使用）
 
@@ -284,57 +285,60 @@
 
 | 按键 | 一击字 | 一击字编码 | 一击词 | 一击词编码 |
 | ---- | ------ | ---------- | ------ | ---------- |
-| r    | 而     | AZZ        | 而且   | AZa        |
-| g    | 那     | BZZ        | 那么   | BZa        |
-| sq   | 并     | CZZ        | 必须   | CZa        |
-| cz   | 说     | DZZ        | 水平   | DZa        |
-| te   | 最     | EZZ        | 作用   | EZa        |
-| vd   | 条     | FZZ        | 条件   | FZa        |
-| dw   | 名     | GZZ        | 明显   | GZa        |
-| da   | 出     | HZZ        | 出来   | HZa        |
-| sg   | 去     | IZZ        | 全国   | IZa        |
-| bv   | 三     | JZZ        | 思想   | JZa        |
-| gr   | 你     | KZZ        | 你们   | KZa        |
-| gf   | 才     | LZZ        | 才能   | LZa        |
-| vs   | 同     | MZZ        | 通过   | MZa        |
-| xb   | 学     | NZZ        | 需要   | NZa        |
-| wt   | 句     | OZZ        | 具有   | OZa        |
-| bc   | 所     | PZZ        | 所以   | PZa        |
-| x    | 跑     | QZZ        | 朋友   | QZa        |
-| bd   | 路     | RZZ        | 落后   | RZa        |
-| wr   | 如     | SZZ        | 如果   | SZa        |
-| af   | 快     | TZZ        | 控制   | TZa        |
-| xa   | 批     | UZZ        | 平均   | UZa        |
-| cs   | 从     | VZZ        | 存在   | VZa        |
-| bs   | 率     | WZZ        | 绿色   | WZa        |
-| ge   | 弄     | XZZ        | 农业   | XZa        |
-| gw   | 女     | YZZ        | 女人   | YZa        |
-| f    | 的     | aZZ        | 但是   | aZa        |
-| fd   | 一     | bZZ        | 一个   | bZa        |
-| cx   | 是     | cZZ        | 什么   | cZa        |
-| w    | 就     | dZZ        | 就是   | dZa        |
-| e    | 这     | eZZ        | 这个   | eZa        |
-| xz   | 小     | fZZ        | 现在   | fZa        |
-| vc   | 我     | gZZ        | 我们   | gZa        |
-| st   | 不     | hZZ        | 不是   | hZa        |
-| t    | 在     | iZZ        | 自己   | iZa        |
-| c    | 法     | jZZ        | 发展   | jZa        |
-| qr   | 过     | kZZ        | 工作   | kZa        |
-| d    | 们     | lZZ        | 没有   | lZa        |
-| bf   | 两     | mZZ        | 历史   | mZa        |
-| z    | 和     | nZZ        | 还是   | nZa        |
-| b    | 了     | oZZ        | 来说   | oZa        |
-| sa   | 其     | pZZ        | 起来   | pZa        |
-| fs   | 与     | qZZ        | 于是   | qZa        |
-| q    | 个     | rZZ        | 各种   | rZa        |
-| v    | 他     | sZZ        | 他们   | sZa        |
-| zv   | 或     | tZZ        | 活动   | tZa        |
-| eq   | 中     | uZZ        | 主要   | uZa        |
-| re   | 人     | vZZ        | 人们   | vZa        |
-| ds   | 成     | wZZ        | 成为   | wZa        |
-| fw   | 对     | xZZ        | 对于   | xZa        |
-| fe   | 地     | yZZ        | 地方   | yZa        |
-| a    | 看     | zZZ        | 可以   | zZa        |
+| r | 而 | AZZ | 而且 | AZa |
+| g | 那 | BZZ | 那么 | BZa |
+| sq | 并 | CZZ | 并且 | CZa |
+| cz | 说 | DZZ | 说明 | DZa |
+| te | 最 | EZZ | 最后 | EZa |
+| vd | 条 | FZZ | 条件 | FZa |
+| dw | 名 | GZZ | 名字 | GZa |
+| da | 出 | HZZ | 出现 | HZa |
+| sg | 去 | IZZ | 去年 | IZa |
+| bv | 三 | JZZ | 三次 | JZa |
+| gr | 你 | KZZ | 你的 | KZa |
+| gf | 才 | LZZ | 才能 | LZa |
+| vs | 同 | MZZ | 同时 | MZa |
+| xb | 学 | NZZ | 学习 | NZa |
+| wt | 句 | OZZ | 句子 | OZa |
+| bc | 所 | PZZ | 所以 | PZa |
+| x | 跑 | QZZ | 跑步 | QZa |
+| bd | 路 | RZZ | 路线 | RZa |
+| wr | 如 | SZZ | 如果 | SZa |
+| af | 快 | TZZ | 快速 | TZa |
+| xa | 批 | UZZ | 批评 | UZa |
+| cs | 从 | VZZ | 从来 | VZa |
+| bs | 率 | WZZ | 率先 | WZa |
+| ge | 弄 | XZZ | 弄清楚 | XZa |
+| gw | 女 | YZZ | 女人 | YZa |
+| f | 的 | aZZ | 但是 | aZa |
+| fd | 一 | bZZ | 一般 | bZa |
+| cx | 是 | cZZ | 什么 | cZa |
+| w | 就 | dZZ | 就是 | dZa |
+| e | 这 | eZZ | 这个 | eZa |
+| xz | 小 | fZZ | 小时 | fZa |
+| vc | 我 | gZZ | 我们 | gZa |
+| st | 不 | hZZ | 不是 | hZa |
+| t | 在 | iZZ | 自己 | iZa |
+| c | 法 | jZZ | 法律 | jZa |
+| qr | 过 | kZZ | 过程 | kZa |
+| d | 们 | lZZ | 没有 | lZa |
+| bf | 两 | mZZ | 两者 | mZa |
+| z | 和 | nZZ | 还是 | nZa |
+| b | 了 | oZZ | 了解 | oZa |
+| sa | 其 | pZZ | 其实 | pZa |
+| fs | 与 | qZZ | 于是 | qZa |
+| q | 个 | rZZ | 个人 | rZa |
+| v | 他 | sZZ | 他们 | sZa |
+| zv | 或 | tZZ | 或者 | tZa |
+| eq | 中 | uZZ | 中国 | uZa |
+| re | 人 | vZZ | 人们 | vZa |
+| ds | 成 | wZZ | 成为 | wZa |
+| fw | 对 | xZZ | 对的 | xZa |
+| fe | 地 | yZZ | 地区 | yZa |
+| a | 看 | zZZ | 看到 | zZa |
+
+
+
 
 ### 612个一击词
 

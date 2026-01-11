@@ -295,7 +295,7 @@ translator:
   enable_sentence: false
   enable_user_dict: true
   user_dict: pdbj_simple
-  db_class: tabledb
+  #db_class: tabledb
   enable_encoder: true
   encode_commit_history: true
   max_phrase_length: 7
