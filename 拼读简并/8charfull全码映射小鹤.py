@@ -27,7 +27,7 @@ print(f"  ✓ 加载了 {len(alpha_to_code)} 个映射关系")
 
 # 打印映射表，方便调试
 print("\n  映射表（前10个）：")
-for k in sorted(list(alpha_to_code.keys())[:10]):
+for k in sorted(list(alpha_to_code.keys())):
     print(f"    {k} -> {alpha_to_code[k]}")
 
 #%% ========== 步骤2: 读取小鹤拆分文件 ==========

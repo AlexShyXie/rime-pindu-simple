@@ -218,6 +218,8 @@
 | yu   | FDS  | FS  |
 | wu   | VCX  | VX  |
 | xu	 | XDV  | BX     |
+| mi	 | WEF  |   DW  |
+
 
 ### 韵调飞键
 
@@ -269,7 +271,7 @@
 | ang3 | ,./  | ,/     |
 | ang4 | .,M  | .M    |
 | ei3  | JiO  | KO     |
-| ai3  | NKL  | MK     |
+| ai3  | MKL  | MK     |
 
 
 
