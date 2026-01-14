@@ -204,11 +204,13 @@
 | zu   | ZD          | TE     |
 | c ci | CD          | Gf     |
 | cu   | CS          | Gd     |
-| xu   | XF（或XDV） | BX     |
+| xi   | XD（或XDV） | XZ     |
+| xu   | XF（或XFV） | XB     |
 | s si | SR          | VB     |
 | su   | SE          | CB     |
 
 组四：由于食指和小指同时按下，无名指悬空，是一个非常难受的动作，所有跨一个按键的组合，都添加3字母并击飞键
+
 | 声介   | 飞键  | 原按键 |
 | ---- | --- | --- |
 | zhu   | QWE  | EQ   |
@@ -217,8 +219,8 @@
 | ru   | REW  | RW  |
 | yu   | FDS  | FS  |
 | wu   | VCX  | VX  |
-| xu	 | XDV  | BX     |
 | mi	 | WEF  |   DW  |
+| qi	 | SEF  |   SA  |
 
 
 ### 韵调飞键

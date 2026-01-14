@@ -89,7 +89,8 @@ chord_composer:
     - xform/<j>/e/
     # xi #2
     - xform/<zx>/f/ 
-    #- xform/<t>/f/ # 这是飞键
+    - xform/<xd>/f/ # 这是飞键
+    - xform/<xdv>/f/ # 这是飞键
     - xform/<o>/f/
     # w eng1
     - xform/<cv>/g/
@@ -133,6 +134,7 @@ chord_composer:
     - xform/<E>/o/
     # qi eng4
     - xform/<as>/p/
+    - xform/<sef>/p/  # 飞键
     - xform/<lj>/p/
     - xform/<lkj>/p/  # 飞键
     # yu ao4
@@ -191,16 +193,17 @@ chord_composer:
     - xform/<Blk>/D/ #-飞键
     # zu ang2
     - xform/<et>/E/
-    - xform/<zd>/E/
-    - xform/<Cn>/E/
+    - xform/<zd>/E/  #-飞键
+    - xform/<Cn>/E/  #-飞键
     - xform/<Dn>/E/
     # ti ang3
     - xform/<dv>/F/
     - xform/<EC>/F/
-    - xform/<EDC>/F/ 
+    - xform/<EDC>/F/ #-飞键
     # mi en3
     - xform/<wd>/G/
-    - xform/<lk>/G/ #-飞键
+    - xform/<wef>/G/ #-飞键
+    - xform/<lk>/G/
     # chu a3
     - xform/<ad>/H/
     - xform/<asd>/H/ # 飞键
@@ -208,12 +211,12 @@ chord_composer:
     # qu ou2
     - xform/<sg>/I/
     - xform/<ih>/I/
-    - xform/<ly>/I/
+    - xform/<ly>/I/  #-飞键
     # s ei2
     - xform/<vb>/J/
-    - xform/<sr>/J/
+    - xform/<sr>/J/  #-飞键s
     - xform/<pl>/J/
-    - xform/<uh>/J/
+    - xform/<uh>/J/  #-飞键
     # ni ei3
     - xform/<rg>/K/
     - xform/<ok>/K/
@@ -229,7 +232,8 @@ chord_composer:
     - xform/<pj>/M/
     # xu ei1
     - xform/<xb>/N/
-    - xform/<xf>/N/
+    - xform/<xf>/N/  #-飞键
+    - xform/<xfv>/N/  #-飞键
     - xform/<By>/N/
     - xform/<ph>/N/
     # ju a2
@@ -237,19 +241,19 @@ chord_composer:
     - xform/<D>/O/
     # su ao2
     - xform/<cb>/P/
-    - xform/<se>/P/
-    - xform/<kn>/P/
+    - xform/<se>/P/  #-飞键
+    - xform/<kn>/P/  #-飞键
     - xform/<Dh>/P/
     # p pu ai3
-    - xform/<x>/Q/
+    - xform/<x>/Q/  #-飞键
     - xform/<xg>/Q/
     - xform/<lC>/Q/
     - xform/<lkm>/Q/ #飞
     # lu ai1
     - xform/<db>/R/
-    - xform/<aw>/R/
+    - xform/<aw>/R/  #-飞键
     - xform/<Eh>/R/
-    - xform/<Bn>/R/
+    - xform/<Bn>/R/  #-飞键
     # ru
     - xform/<wr>/S/
     - xform/<wer>/S/ #飞
@@ -259,11 +263,11 @@ chord_composer:
     - xform/<oi>/T/
     # pi
     - xform/<ax>/U/
-    - xform/<av>/U/
+    - xform/<av>/U/ # 飞键
     - xform/<po>/U/
     # cu 
     - xform/<dg>/V/
-    - xform/<sc>/V/
+    - xform/<sc>/V/ # 飞键
     - xform/<pi>/V/
     # lv
     - xform/<sb>/W/
