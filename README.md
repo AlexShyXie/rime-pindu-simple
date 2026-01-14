@@ -204,8 +204,8 @@
 | zu   | ZD          | TE     |
 | c ci | CD          | Gf     |
 | cu   | CS          | Gd     |
-| xi   | XD（或XDV） | XZ     |
-| xu   | XF（或XFV） | XB     |
+| xi   | XF（或XFV） | XZ     |
+| xu   | XD（或XDV） | XB     |
 | s si | SR          | VB     |
 | su   | SE          | CB     |
 
@@ -300,19 +300,19 @@
 | da   | 出     | HZZ        | 出现   | HZa        |
 | sg   | 去     | IZZ        | 去年   | IZa        |
 | bv   | 三     | JZZ        | 三次   | JZa        |
-| gr   | 你     | KZZ        | 你的   | KZa        |
+| gr   | 你     | KZZ        | 你们   | KZa        |
 | gf   | 才     | LZZ        | 才能   | LZa        |
 | vs   | 同     | MZZ        | 同时   | MZa        |
 | xb   | 学     | NZZ        | 学习   | NZa        |
 | wt   | 句     | OZZ        | 句子   | OZa        |
 | bc   | 所     | PZZ        | 所以   | PZa        |
-| x    | 跑     | QZZ        | 跑步   | QZa        |
+| x    | 跑     | QZZ        | 跑路   | QZa        |
 | bd   | 路     | RZZ        | 路线   | RZa        |
 | wr   | 如     | SZZ        | 如果   | SZa        |
 | af   | 快     | TZZ        | 快速   | TZa        |
 | xa   | 批     | UZZ        | 批评   | UZa        |
 | cs   | 从     | VZZ        | 从来   | VZa        |
-| bs   | 率     | WZZ        | 率先   | WZa        |
+| bs   | 率     | WZZ        | 概率   | WZa        |
 | ge   | 弄     | XZZ        | 弄清楚 | XZa        |
 | gw   | 女     | YZZ        | 女人   | YZa        |
 | f    | 的     | aZZ        | 但是   | aZa        |

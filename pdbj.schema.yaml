@@ -89,8 +89,8 @@ chord_composer:
     - xform/<j>/e/
     # xi #2
     - xform/<zx>/f/ 
-    - xform/<xd>/f/ # 这是飞键
-    - xform/<xdv>/f/ # 这是飞键
+    - xform/<xf>/f/  #-飞键
+    - xform/<xfv>/f/  #-飞键
     - xform/<o>/f/
     # w eng1
     - xform/<cv>/g/
@@ -232,8 +232,8 @@ chord_composer:
     - xform/<pj>/M/
     # xu ei1
     - xform/<xb>/N/
-    - xform/<xf>/N/  #-飞键
-    - xform/<xfv>/N/  #-飞键
+    - xform/<xd>/N/ # 这是飞键
+    - xform/<xdv>/N/ # 这是飞键
     - xform/<By>/N/
     - xform/<ph>/N/
     # ju a2

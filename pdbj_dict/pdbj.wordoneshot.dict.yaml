@@ -20,19 +20,19 @@ columns:
 出现	HZa
 去年	IZa
 三次	JZa
-你的	KZa
+你们	KZa
 才能	LZa
 同时	MZa
 学习	NZa
 句子	OZa
 所以	PZa
-跑步	QZa
+跑路	QZa
 路线	RZa
 如果	SZa
 快速	TZa
 批评	UZa
 从来	VZa
-率先	WZa
+概率	WZa
 弄清楚	XZa
 女人	YZa
 但是	aZa
@@ -77,10 +77,9 @@ columns:
 可能	zXa
 开始	zXZ
 
-
-会不会	tWZ
 或是	tWZ
-或是	tWa
+会不会	tWZ
+会不会	tWa
 
 对了	xXZ
 对不对	xXZ
@@ -112,7 +111,31 @@ columns:
 能不能	BXa
 
 # 还多余一个y
+学	NYZ
+学	NYa
 选	NYZ
+
 做	EYZ
+做	EYa
 组	EYZ
-组	EYa
+
+推	MYZ
+推	MYa
+
+书	DYZ
+书	DYa
+
+她	sYZ
+她	sYa
+
+像	fYZ
+像	fYa
+
+来	oYZ
+来	oYa
+
+么	lYZ
+么	lYa
+
+吧	hYZ
+吧	hYa
