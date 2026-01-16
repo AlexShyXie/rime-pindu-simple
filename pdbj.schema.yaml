@@ -45,6 +45,7 @@ engine:
     - punct_translator
     - table_translator
   filters:
+    - lua_filter@*snow.fix
     - reverse_lookup_filter@reverse_lookup
     - lua_filter@*pdbj.assembly
     - simplifier
@@ -109,7 +110,7 @@ chord_composer:
 
     # f fu eng2
     - xform/<c>/j/
-    - xform/<ac>/j/
+    #- xform/<ac>/j/
     - xform/<lh>/j/
     - xform/<kh>/j/ 
     # gu e3
@@ -223,7 +224,8 @@ chord_composer:
     - xform/<oij>/K/
     # c ao1
     - xform/<fg>/L/
-    - xform/<dc>/L/
+    - xform/<dc>/L/ # 这是飞键
+    #- xform/<sc>/L/  # 这是飞键
     - xform/<Ej>/L/
     - xform/<Bm>/L/
     # tu ou1
@@ -268,6 +270,7 @@ chord_composer:
     # cu 
     - xform/<dg>/V/
     - xform/<sc>/V/ # 飞键
+    - xform/<ac>/V/ # 飞键
     - xform/<pi>/V/
     # lv
     - xform/<sb>/W/
