@@ -111,9 +111,8 @@ columns:
 能不能	BXa
 
 # 还多余一个y
-学	NYZ
-学	NYa
 选	NYZ
+选	NYa
 
 做	EYZ
 做	EYa
@@ -126,6 +125,7 @@ columns:
 书	DYa
 
 她	sYZ
+她们	sYZ
 她	sYa
 
 像	fYZ
@@ -139,3 +139,15 @@ columns:
 
 吧	hYZ
 吧	hYa
+
+都	aYZ
+都	aYa
+
+还	nYZ
+还	nYa
+
+贯	kYZ
+贯	kYa
+
+进	dYZ
+进	dYa
