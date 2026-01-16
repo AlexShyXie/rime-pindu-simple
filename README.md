@@ -169,6 +169,8 @@
 | m    | mu   |
 | f    | fu   |
 
+> fi是不存在的，所以cs空缺；取消ca作为声介fu的按键，ca改为声介cu
+
 ### **声介飞键**
 
 由于部分声介组合不太方便按出，为了优化手感，因此设置了另一种额外的打出方式。声介部分共设置了三组飞键
@@ -202,8 +204,8 @@
 | lu   | AW          | BD     |
 | z zi | ZF          | TR     |
 | zu   | ZD          | TE     |
-| c ci | CD          | Gf     |
-| cu   | CS          | Gd     |
+| c ci | CS(或CD)    | Gf     |
+| cu   | CA          | Gd     |
 | xi   | XF（或XFV） | XZ     |
 | xu   | XD（或XDV） | XB     |
 | s si | SR          | VB     |
