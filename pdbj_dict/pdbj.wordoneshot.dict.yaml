@@ -11,7 +11,7 @@ columns:
 
 # 一击字，左手+空格上屏的
 而且	AZa
-那么	BZa
+那样	BZa
 并且	CZa
 说明	DZa
 最后	EZa
@@ -77,6 +77,7 @@ columns:
 可能	zXa
 开始	zXZ
 
+
 或是	tWZ
 会不会	tWZ
 会不会	tWa
@@ -89,6 +90,11 @@ columns:
 越来越	qSZ
 越来越	qSa
 
+原来如此	qTZ
+原来如此	qTa
+
+要不要	qYZ
+要不要	qYa
 
 怎样	iSZ
 怎么样	iSZ
@@ -151,3 +157,7 @@ columns:
 
 进	dYZ
 进	dYa
+
+再	iYZ
+再	iYa
+
