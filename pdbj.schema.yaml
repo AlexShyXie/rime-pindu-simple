@@ -81,7 +81,7 @@ chord_composer:
     #- xform/<a>/c/ #这个飞键去掉
     - xform/<i>/c/
     # ji #1
-    - xform/<qw>/d/
+    #- xform/<qw>/d/  #这个飞键去掉
     - xform/<w>/d/
     - xform/<p>/d/
     # zh e4
@@ -211,6 +211,7 @@ chord_composer:
     - xform/<C>/H/
     # qu ou2
     - xform/<sg>/I/
+    - xform/<rf>/I/  #-飞键
     - xform/<ih>/I/
     - xform/<ly>/I/  #-飞键
     # s ei2
@@ -225,7 +226,7 @@ chord_composer:
     # c ao1
     - xform/<fg>/L/
     - xform/<dc>/L/ # 这是飞键
-    #- xform/<sc>/L/  # 这是飞键
+    - xform/<sdv>/L/  # 这是飞键
     - xform/<Ej>/L/
     - xform/<Bm>/L/
     # tu ou1
@@ -240,6 +241,8 @@ chord_composer:
     - xform/<ph>/N/
     # ju a2
     - xform/<wt>/O/
+    - xform/<ed>/O/  #-飞键
+    - xform/<qw>/O/  #-飞键
     - xform/<D>/O/
     # su ao2
     - xform/<cb>/P/
@@ -1636,6 +1639,7 @@ menu:
   alternative_select_labels: [1, 2, 3, 4, 5]
 key_binder:
   bindings:
+    - {accept: "Tab", send: Escape, when: composing} # tab取消
     #退格即清屏
     - { accept: BackSpace, send: Escape, when: composing }
     #一次退一击
@@ -1657,7 +1661,9 @@ key_binder:
     - { when: has_menu, accept: 9, send: KP_9 } 
     
 recognizer:
+  #import_preset: default
   patterns:
+    #uppercase: "" #中文状态大写锁定直接上屏
     punct: '^\\([0-9]0?|[A-Za-z]+)?$'
     expression: "^=.*$"
 
