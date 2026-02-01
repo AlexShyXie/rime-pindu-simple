@@ -203,10 +203,10 @@
 
 | 声介  |   飞键   | 原按键 |
 | ---- | ------- | ------ |
-| l    | AR      | B      |
-| li   | AE      | BF     |
-| lu   | AW      | BD     |
-| lü   | AT      | SB     |
+| l    | AT      | B     |
+| li   | AR      | BF    |
+| lu   | AE      | BD    |
+| lü   | AW      | BS     |
 | z zi | ZF      | TR     |
 | zu   | ZD      | TE     |
 | c ci | CD或SDV | Gf     |
