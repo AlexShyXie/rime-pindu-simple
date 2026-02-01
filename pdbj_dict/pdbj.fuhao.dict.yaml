@@ -27,14 +27,15 @@ columns:
 ,	ZHZ
 .	ZOZ
 /	ZoZ
+？	Zoa
 #'	ZnZ
 ……	ZAZ
 （	ZBZ
 ）	ZGZ
 《	ZpZ
 》	ZgZ
-·	ZSZ
-～	ZTZ
+# ·	ZSZ
+# ～	ZTZ
 ‘	ZXZ
 〈	ZXZ
 【	ZXZ
@@ -51,77 +52,6 @@ columns:
 °	ZyZ
 ℃	ZyZ
 ℉	ZyZ
-她	ZjZ	soZa
-像	Zja	bcZa
-# 剩下部分是特殊符号 ，用读音+声介打出，括号内为声介的按键
-# 控制系列
-»	aeZaZZ
-
-# 圈 （数字读音 + SG)
-①	bdZIZZ
-⑪	bdZIZZ
-②	AaZIZZ
-⑫	AaZIZZ
-③	JtZIZZ
-⑬	JtZIZZ
-④	JaZIZZ
-⑭	JaZIZZ
-⑤	gcZIZZ
-⑮	gcZIZZ
-⑥	mzZIZZ
-⑯	mzZIZZ
-⑦	pdZIZZ
-⑰	pdZIZZ
-⑧	hoZIZZ
-⑱	hoZIZZ
-⑨	dwZIZZ
-⑲	dwZIZZ
-⑩	cfZIZZ
-⑳	cfZIZZ
-♂	BnZjZZ
-♀	YcZjZZ
-
-# 符号系列
-→	bzZjZZ
-←	EkZjZZ
-√	rMZjZZ
-π	QsZjZZ
-↑	cvZjZZ
-↓	fuZjZZ
-
-# 表情系列，加bi声介
-# 笑
-(*°∀ °*)	fqZCZZ
-(≧∀≦)ゞ	fqZCZZ
-# 爱
-(｡♥‿♥｡)	AsZCZZ
-# 哭
-(╥﹏╥)	TdZCZZ
-(｡•́︿•̀｡)	TdZCZZ
-థ౪థ	TdZCZZ
-# 惊
-ΩДΩ	dgZCZZ
-# 冲
-(๑•̀ω•́)ノ	HgZCZZ
-# 瞪
-(´⊙ω⊙`)	apZCZZ
-# 呆
-（¯﹃¯）	aRZCZZ
-# 额
-(；´д｀)ゞ	AbZCZZ
-# 鸟
-(•ө•)	KAZCZZ
-(o･e･)	KAZCZZ
-# 猫
-ヾ(*ΦωΦ)ツ	lLZCZZ
-
-# 牛
-🐮	KIZCZZ
-# 诶
-☝️🤓	AJZCZZ
-# 文
-📂	grZCZZ
-
 
 
 # 文件树，加w声介

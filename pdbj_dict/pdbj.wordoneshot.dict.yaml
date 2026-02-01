@@ -63,58 +63,8 @@ columns:
 看到	zZa
 
 # 左右手一击，横竖撇捺折那个
-# 对应ui io op pi pu io
+# 对应ui io op pi pu io，我把ui io对应成eng3 ang3
 
-看到	zSZ
-看来	zSZ
-看来	zSa
-
-可是	zWZ
-可是	zWa
-
-可以	zXZ
-可能	zXZ
-可能	zXa
-开始	zXZ
-
-
-或是	tWZ
-会不会	tWZ
-会不会	tWa
-
-对了	xXZ
-对不对	xXZ
-对不对	xXa
-
-原来	qSZ
-越来越	qSZ
-越来越	qSa
-
-原来如此	qTZ
-原来如此	qTa
-
-要不要	qYZ
-要不要	qYa
-
-怎样	iSZ
-怎么样	iSZ
-怎么样	iSa
-
-时候	cWZ
-是不是	cWZ
-是不是	cWa
-
-一样	bSZ
-有没有	bSZ
-有没有	bSa
-
-我的	gUZ
-为什么	gUZ
-为什么	gUa
-
-能力	BUZ
-能不能	BXZ
-能不能	BXa
 
 # 还多余一个y
 选	NYZ
@@ -160,6 +110,37 @@ columns:
 
 再	iYZ
 再	iYa
+怎么样	iYZ
+怎样	iYZ
 
 又	bYZ
 又	bYa
+有没有	bYZ
+一样	bYZ
+
+可是	zYZ
+可以	zYZ
+可能	zYZ
+开始	zYZ
+
+会不会	tYZ
+或是	tYZ
+
+对不对	xYZ
+对了	xYZ
+
+原来如此	qYZ
+越来越	qYZ
+要不要	qYZ
+原来	qYZ
+
+是不是	cYZ
+时候	cYZ
+
+为什么	gYZ
+我的	gYZ
+
+能不能	BYZ
+能力	BYZ
+
+

@@ -78,7 +78,6 @@ chord_composer:
     - xform/<B>/b/
     # sh #3
     - xform/<xc>/c/
-    #- xform/<a>/c/ #这个飞键去掉
     - xform/<i>/c/
     # ji #1
     #- xform/<qw>/d/  #这个飞键去掉
@@ -91,7 +90,6 @@ chord_composer:
     # xi #2
     - xform/<zx>/f/ 
     - xform/<xf>/f/  #-飞键
-    - xform/<xfv>/f/  #-飞键
     - xform/<o>/f/
     # w eng1
     - xform/<cv>/g/
@@ -100,11 +98,11 @@ chord_composer:
     - xform/<Bj>/g/
     # b bu an4
     - xform/<s>/h/
-    - xform/<st>/h/
+    # - xform/<st>/h/ #这是原始按键
     - xform/<Cm>/h/
     # z e2不
     - xform/<rt>/i/
-    - xform/<t>/i/ # 这是飞键
+    # - xform/<t>/i/ # 这是飞键
     - xform/<zf>/i/ # 这是飞键
     - xform/<l>/i/
 
@@ -190,6 +188,7 @@ chord_composer:
     # shu eng3
     - xform/<zc>/D/
     - xform/<zxc>/D/ #-飞键
+    - xform/<ui>/D/ #-飞键
     - xform/<Bk>/D/
     - xform/<Blk>/D/ #-飞键
     # zu ang2
@@ -200,6 +199,7 @@ chord_composer:
     # ti ang3
     - xform/<dv>/F/
     - xform/<EC>/F/
+    - xform/<io>/F/  #-飞键
     - xform/<EDC>/F/ #-飞键
     # mi en3
     - xform/<wd>/G/
@@ -236,13 +236,11 @@ chord_composer:
     # xu ei1
     - xform/<xb>/N/
     - xform/<xd>/N/ # 这是飞键
-    - xform/<xdv>/N/ # 这是飞键
     - xform/<By>/N/
     - xform/<ph>/N/
     # ju a2
     - xform/<wt>/O/
-    - xform/<ed>/O/  #-飞键
-    - xform/<qw>/O/  #-飞键
+    - xform/<t>/O/  #-飞键
     - xform/<D>/O/
     # su ao2
     - xform/<cb>/P/
@@ -277,6 +275,7 @@ chord_composer:
     - xform/<pi>/V/
     # lv
     - xform/<sb>/W/
+    - xform/<at>/W/ # 飞键
     - xform/<ou>/W/
     # nu
     - xform/<eg>/X/
