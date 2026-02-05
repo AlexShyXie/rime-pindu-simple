@@ -58,7 +58,7 @@ simplifier:
 speller:
   auto_select: true
   #单手|一击带空格|两击以上
-  auto_select_pattern: '^(.Z.|Z..|..a|....+)$'
+  auto_select_pattern: '^(.Z.|Z..|..a|.YZ|....+)$'
   #max_code_length: 6
   alphabet: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
   algebra:
@@ -93,8 +93,8 @@ chord_composer:
     - xform/<o>/f/
     # w eng1
     - xform/<cv>/g/
-    - xform/<xv>/g/
-    - xform/<xcv>/g/ # 飞
+  #  - xform/<xv>/g/
+  #  - xform/<xcv>/g/ # 飞
     - xform/<Bj>/g/
     # b bu an4
     - xform/<s>/h/
@@ -120,7 +120,7 @@ chord_composer:
     - xform/<Bh>/l/
     # li ei4
     - xform/<fb>/m/
-    - xform/<ar>/m/   # 飞键
+    - xform/<ae>/m/   # 飞键
     - xform/<ij>/m/
     # h an2
     - xform/<zb>/n/
@@ -128,8 +128,8 @@ chord_composer:
     - xform/<mn>/n/
     - xform/<ED>/n/
     # l a1
-    - xform/<b>/o/
-    - xform/<at>/o/   # 飞键
+    #- xform/<b>/o/
+    - xform/<ar>/o/   # 飞键
     - xform/<E>/o/
     # qi eng4
     - xform/<as>/p/
@@ -141,7 +141,7 @@ chord_composer:
     - xform/<sdf>/q/ # 飞键
     - xform/<lm>/q/
     # g en2
-    - xform/<qt>/r/
+    #- xform/<qt>/r/
     - xform/<q>/r/
     - xform/<jh>/r/
     - xform/<Bl>/r/
@@ -170,7 +170,7 @@ chord_composer:
     - xform/<ef>/y/
     - xform/<Em>/y/
     # k ou4
-    - xform/<ag>/z/
+    #- xform/<ag>/z/
     - xform/<a>/z/ # 飞键
     - xform/<oj>/z/
     # # ao3
@@ -211,7 +211,8 @@ chord_composer:
     - xform/<C>/H/
     # qu ou2
     - xform/<sg>/I/
-    - xform/<rf>/I/  #-飞键
+    - xform/<fg>/I/  #-飞键
+    - xform/<b>/I/  #-飞键
     - xform/<ih>/I/
     - xform/<ly>/I/  #-飞键
     # s ei2
@@ -224,7 +225,7 @@ chord_composer:
     - xform/<ok>/K/
     - xform/<oij>/K/
     # c ao1
-    - xform/<fg>/L/
+    #- xform/<fg>/L/
     - xform/<dc>/L/ # 这是飞键
     - xform/<sdv>/L/  # 这是飞键
     - xform/<Ej>/L/
@@ -236,6 +237,7 @@ chord_composer:
     # xu ei1
     - xform/<xb>/N/
     - xform/<xd>/N/ # 这是飞键
+    - xform/<xv>/N/ # 这是飞键
     - xform/<By>/N/
     - xform/<ph>/N/
     # ju a2
@@ -254,7 +256,7 @@ chord_composer:
     - xform/<lkm>/Q/ #飞
     # lu ai1
     - xform/<db>/R/
-    - xform/<ae>/R/  #-飞键
+    - xform/<aw>/R/  #-飞键
     - xform/<Eh>/R/
     - xform/<Bn>/R/  #-飞键
     # ru
@@ -272,16 +274,18 @@ chord_composer:
     - xform/<dg>/V/
     - xform/<sc>/V/ # 飞键
     - xform/<ac>/V/ # 飞键
+    - xform/<ag>/V/ # 飞键
     - xform/<pi>/V/
     # lv
     - xform/<sb>/W/
-    - xform/<aw>/W/ # 飞键
+    - xform/<ab>/W/ # 飞键
     - xform/<ou>/W/
     # nu
     - xform/<eg>/X/
     - xform/<pu>/X/
     # nv小
     - xform/<wg>/Y/
+    - xform/<qg>/Y/ # 飞键
     - xform/<y>/Y/
     - xform/[<>]//
     - xform/^(..[Za])$/#$1/
