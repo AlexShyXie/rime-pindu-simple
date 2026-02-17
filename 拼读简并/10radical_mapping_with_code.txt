@@ -42,7 +42,7 @@
 习	p	X
 乡	p	X
 了	L	L
-二	zj	E
+二	ki	E
 于	Y	Y
 五	gi	W
 井	J	J
@@ -52,7 +52,7 @@
 产	I	I
 人	rj	R
 亻	rj	R
-儿	zj	E
+儿	ki	E
 兀	gi	W
 入	rj	R
 八	cu	B
@@ -78,7 +78,7 @@
 千	g	Q
 午	gi	W
 半	cu	B
-卩	zj	E
+卩	ki	E
 即	n	G
 卵	L	L
 厂	I	I
@@ -110,7 +110,7 @@
 尹	Y	Y
 尺	I	I
 屯	gv	T
-山	zj	E
+山	ki	E
 川	I	I
 工	n	G
 己	J	J
@@ -127,7 +127,7 @@
 弋	Y	Y
 弓	n	G
 弗	d	F
-彐	zj	E
+彐	ki	E
 彳	I	I
 忄	p	X
 必	cu	B
@@ -200,9 +200,9 @@
 罒	b	S
 羊	Y	Y
 耂	L	L
-而	zj	E
+而	ki	E
 耒	L	L
-耳	zj	E
+耳	ki	E
 肃	b	S
 臣	I	I
 自	h	Z
@@ -226,7 +226,7 @@
 金	J	J
 钅	J	J
 门	M	M
-阝	zj	E
+阝	ki	E
 雨	Y	Y
 非	d	F
 面	M	M

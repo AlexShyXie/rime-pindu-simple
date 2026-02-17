@@ -1,0 +1,15 @@
+patch:
+  engine/processors/@before 2:  #这种方式将在第1行后面新增一行，后面的行后移
+    chord_composer
+
+
+  punctuator:
+    digit_separators: ""  #数字分隔符
+    __include: wanxiang_symbols:/symbol_table         # 从 symbols.yaml 导入配置
+
+  key_binder/bindings/+: 
+    - {accept: apostrophe, send: 3, when: has_menu} #分号次选
+
+  chord_composer:
+    __include: flypy_chording:/chord_composer
+
