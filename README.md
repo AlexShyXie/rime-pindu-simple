@@ -18,6 +18,8 @@
 ![](vx_images/2567690765382.png)
 
 > 万象方案的手动调频需要更新rime.dll
+> 方案里面一声和四声合并
+
 
 # 拼读简并
 拼读并击原始版：[https://github.com/zhanghaozhecn/rime-pindu-chord-type](https://github.com/zhanghaozhecn/rime-pindu-chord-type)

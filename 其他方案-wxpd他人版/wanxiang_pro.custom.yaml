@@ -1,47 +1,11 @@
 patch:
-  schema/name: 冰雪一拼&万象拼音PRO
-  # switches/@7/reset: 0
-  # switches/@before 2:
-    # __patch:
-      # - name: popping
-        # states: [整句, 顶功]
-        # reset: 0
+  schema/name: 万象拼读并
 
-  switches:
-    - name: ascii_mode                   # 中英输入状态
-      states: [ 中文, 英文 ]
-    - name: ascii_punct                  # 中英标点
-      states: [ 中标, 英标 ]
-    - name: popping
-      states: [整句, 顶功]
-      reset: 0
-    - name: full_shape                   #全角、半角字符输出
-      states: [ 半角, 全角 ]
-    - name: emoji                        #候选出现emoji滤镜，会显示在相应的候选后面，万象侧重于tips提示，避免候选被占用，因此默认为reset: 0，归属opencc emoji滤镜
-      states: [ 表情关, 表情开 ]
-    - name: chinese_english              #候选进入翻译模式滤镜，会显示在相应的候选后面，万象侧重于tips提示，避免候选被占用，快捷键配套ctrl+e,归属opencc 翻译滤镜
-      states: [ 翻译关, 翻译开 ]
-    - name: chaifen_switch               #开启后在候选的注释里面实时显示辅助码的拆分提醒优先级高于普通辅助提醒，不开启则采用系统配置，快捷键配套ctrl+c,影响的是comment_format，归属：super_comment.lua
-      states: [ 拆分关, 拆分开 ]
-    - name: charset_filter               #字符集过滤，默认开启8105通规显示，即小字集，可通过开关实时开启全字集，快捷键配套ctrl+g,归属：super_filter.lua
-      states: [ 大字集, 小字集 ]
-      reset: 1
-    - name: super_tips                   #开启后在输入编码后面的提示区显示实时的提示数据，受tips数据库影响，表情、翻译、车牌、符号等对应关系数据，并可实现句号上屏，不开启则默认，影响的是segment.prompt参数，归属：super_tips.lua
-      states: [ 提示关, 提示开 ]
-      reset: 0
-    - options: [ raw_input, tone_display, full_pinyin ]   #开启后在输入编码的位置实时转换为带声调全拼或者不带声调全拼，不开启则采用系统配置原始编码，影响的是preedit_format,归属：super_preedit.lua
-      states: [ 原编码, 有声调, 无声调 ]
-  #    reset: 2     #对于开关组从0开始数，第几个就reset几可设为默认
-    - options: [ comment_off, fuzhu_hint, tone_hint ]  #开启后在候选的注释里面实时显示辅助码或者全拼声调，不开启则采用系统配置，影响的是comment_format，快捷键配套ctrl+a,归属：super_comment.lua
-      states: [ 注释关, 辅助开, 读音开 ]
-    - options: [ s2s, s2t, s2hk, s2tw ]  # 简繁转换开关组，可以在一个空选项和多个实际“- simplifier@s2hk”引入的项目之前切换，这是一个开关组，你可以将其中任意一个s2s等设置为toggle快捷键，多次按下将轮询
-      states: [ 简体, 通繁, 港繁, 臺繁 ]
-    - options: [ abbrev_off, abbrev_lazy, abbrev_always ]
-      states: [ 简码关, 空出简, 总出简 ]
-      reset: 1
-    - name: char_priority                #多体现在编码重合但候选有单字或者多字的情况`引导的辅码查词时是否单字优先，全拼常见，类似于特定编码情况下、反查状态下的调序能力。归属：super_lookup.lua
-      states: [词组先, 单字先]
-
+  switches/@before 2:
+    __patch:
+      - name: popping
+        states: [整句, 顶功]
+        reset: 0
 
   speller/alphabet: 'zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA1234567890`/'
   # Tips 配置项
@@ -96,7 +60,6 @@ patch:
       - lua_translator@*unicode              #通过输入大写U引导，并输入Unicode编码获得汉字输出
       - lua_translator@*number_translator    #数字、金额大写，通过输入大写R1234获得候选输出
       # - lua_translator@*super_calculator     #超级计算器，Lua内查看高级用法
-      - lua_translator@*calculator_translator
       - lua_translator@*input_statistics     #一个输入统计的脚本，以日、周、月、年等维度的统计
       - table_translator@custom_phrase       #自定义短语 custom_phrase.txt，用于置顶自定义编码候选词
       - table_translator@chengyu             #简码成语词汇表导入
@@ -115,6 +78,9 @@ patch:
       # - lua_filter@*super_english                     #comment前,负责英文方案及中英混输中英文单词格式化，语句流，自动加空格等策略
       - lua_filter@*super_sequence*F                  #手动排序，对高亮候选 ctrl+j左移动 ctrl+k 右移动 ctrl+0 移除位移
       - uniquifier                                    #去重
+
+
+
 
 
   # 主翻译器
@@ -147,41 +113,6 @@ patch:
     - xform/iou/iu/
     - xform/uei/ui/
     - xform/([jqxy])v/$1u/
-    #- xform/.._/X/ 转成拼音格式
-    - xform ([aeiou])(ng?|r)([1234]) $1$3$2
-    - xform ([aeo])([iuo])([1234]) $1$3$2
-    - xform/^e1$/ē-ō/
-    - xform/^e2$/é-ó/
-    - xform/^e3$/ě-ǒ/
-    - xform/^e4$/è-ò/
-    - xform a1 ā
-    - xform a2 á
-    - xform a3 ǎ
-    - xform a4 à
-    - xform e1 ē
-    - xform e2 é
-    - xform e3 ě
-    - xform e4 è
-    - xform o1 ō
-    - xform o2 ó
-    - xform o3 ǒ
-    - xform o4 ò
-    - xform i1 ī
-    - xform i2 í
-    - xform i3 ǐ
-    - xform i4 ì
-    - xform u1 ū
-    - xform u2 ú
-    - xform u3 ǔ
-    - xform u4 ù
-    - xform v1 ǖ
-    - xform v2 ǘ
-    - xform v3 ǚ
-    - xform v4 ǜ
-    - xform v ü
-
-  # translator/comment_format/+:
-    # - xform/~.*//
   # 次翻译器
   user_dict_set/preedit_format/+:
     # 字母标调
@@ -212,55 +143,16 @@ patch:
     - xform/iou/iu/
     - xform/uei/ui/
     - xform/([jqxy])v/$1u/
-    # 转成拼音格式
-    - xform ([aeiou])(ng?|r)([1234]) $1$3$2
-    - xform ([aeo])([iuo])([1234]) $1$3$2
-    - xform/^e1$/ē-ō/
-    - xform/^e2$/é-ó/
-    - xform/^e3$/ě-ǒ/
-    - xform/^e4$/è-ò/
-    - xform a1 ā
-    - xform a2 á
-    - xform a3 ǎ
-    - xform a4 à
-    - xform e1 ē
-    - xform e2 é
-    - xform e3 ě
-    - xform e4 è
-    - xform o1 ō
-    - xform o2 ó
-    - xform o3 ǒ
-    - xform o4 ò
-    - xform i1 ī
-    - xform i2 í
-    - xform i3 ǐ
-    - xform i4 ì
-    - xform u1 ū
-    - xform u2 ú
-    - xform u3 ǔ
-    - xform u4 ù
-    - xform v1 ǖ
-    - xform v2 ǘ
-    - xform v3 ǚ
-    - xform v4 ǜ
-    - xform v ü
 
 #并击处理器
   chord_composer:
     finish_chord_on_first_key_release: true #有一键被释放时立刻触发合成
     alphabet: "qazwsxedcrfvtgbyhnujmik,ol.p;/' "
     algebra:
-      # 左手并击Y，打出声介的三四五六选
-      - xform/^([qazwsxedcrfvtgb]+)y$/o★$1★-- /
-      - xform/^([qazwsxedcrfvtgb]+)uo$/o★$1★--- /
-      - xform/^([qazwsxedcrfvtgb]+)yp$/o★$1★---- /
-      - xform/^([qazwsxedcrfvtgb]+)up$/o★$1★----- /
-      - xform/^([qazwsxedcrfvtgb]+)ip$/o★$1★------ /
-      - xform/^([qazwsxedcrfvtgb]+)op$/o★$1★------- /
       # 双手并击，打出音节
       - xform|^([qazwsxedcrfvtgb]+)([p;/ol.ik,ujmyhn]+)$|★$1★★$2★|
-      # 双手带空格并击，打出音节完整音节直接上屏，这里 o 表示追加
-      - xform|^([qazwsxedcrfvtgb]+)([p;/ol.ik,ujmyhn]+) $|o★$1★★$2★ |
+      # 双手带空格并击，打出追加音节，这里 u 表示追加
+      - xform|^([qazwsxedcrfvtgb]+)([p;/ol.ik,ujmyhn]+) $|u★$1★★$2★|
       # 左手或右手带空格并击，打出辅助码)######################################(注释掉,使用万象的辅助码)
       # - xform/^([qazwsxedcrfvtgb]+) $/v★$1★v/
       # - xform/^([yhnujmikolp]+) $/v$1$1v/
@@ -268,165 +160,137 @@ patch:
       - xform/^([qazwsxedcrfvtgb]+)$/o★$1★ /
       # 左手并击带空格，打出声介的二选（一简词）
       - xform/^([qazwsxedcrfvtgb]+) $/o★$1★- /
-
-      # 右手单键击键
-      - xform|^h$|/iduh | # '、'
-      - xform|^j$|/idh | # '，'
-      - xform|^k$|/ijh | # '。'
-      - xform|^l$|/iwh | # '？'
-      - xform|^l $|/ith | # '！'
-      - xform|^y$|- |
-      - xform|^u$|-- |
-      # - xform|^i$|iysyh | # '”'
-      - xform|^i$|--- |
-      - xform|^o$|---- |
-      - xform|^p$|----- |
-      # - xform|^p$|------ |
-      # 右手组合击键，打出对应的符号
-      - xform|^n$|{Page_Up}|
-      - xform|^m$|{Page_Down}|
-      - xform|^m,$|{Page_Up}| # '·'
-      - xform|^,\.$|{Page_Down}| # 'emoji' 不加空格
-      - xform|^m\.$|/ibq|
-      - xform|^m\/$|/idw|
-      - xform/^jk$/{Escape}/
-      # - xform/^kl$/-- /
-      # - xform|^ui$|--- |
-      # - xform|^io$|---- | 
-      # - xform|^uo$|----- |
-      # - xform|^up$|---- | 
-      - xform/^jl$/{Escape}/
-      # - xform/^j;$/iwh /
+      # 右手并击，打出符号和功能键
+      - xform|^h$|/iduh |
+      - xform|^j$|/idh |
+      - xform|^k$|/ijh |
+      - xform|^l$|/iwh |
+      - xform|^y$|/ipzh |
+      - xform|^u$|/izsyh |
+      - xform|^i$|/iysyh |
+      - xform|^o$|/imh |
+      - xform|^p$|/ifh |
+      - xform|^n$|/islh |
+      - xform|^m$|/ith |
+      - xform|^ui$|/izkh |
+      - xform|^io$|/iykh |
+      - xform|^uo$|/izsmh |
+      - xform|^up$|/iysmh |
+      - xform|^m,$|/ifgh |
+      - xform|^,\.$|/iblh |
+      - xform|^m\.$|/izdyh |
+      - xform|^m\/$|/iydyh |
+      - xform/^jk$/- /
+      - xform/^kl$/-- /
+      - xform/^jl$/--- /
+      - xform/^j;$/---- /
       - xform/-/{Down}/
-      # - xform/^hk$/{Page_Up}/
-      # - xform/^hl$/{Page_Down}/
+      - xform/^hk$/{Page_Up}/
+      - xform/^hl$/{Page_Down}/
+      - xform/^op$/{Control+BackSpace}/
       # 左手+右手'jio'并击，打出辅助码
-      #- xform|^★([qazwsxedcrfvtgb])★★jio★$|\U$1|
+      - xform|^★([qazwsxedcrfvtgb])★★jio★$|\U$1|
       # 右手+左手'wef'并击，打出辅助码
-      #- xform|^★wef★★([polikujmyhn])★$|\U$1|
+      - xform|^★wef★★([polikujmyhn])★$|\U$1|
 
 
       # 左手声介
-      - xform/★r★/rj/ # 而
-      - xform/★df★/rji/ # 其
-      - xform/★cv★/rju/ # 我
-      - xform/★sf★/rjv/ # 与
-      - xform/★sdf★/rjv/ # 与
-      - xform/★s★/b/ # 不
-      - xform/★qf★/bi/ # 并
-      - xform/★x★/p/ # 跑
-      - xform/★av★/pi/ # 批
-      - xform/★d★/m/ # 们
-      - xform/★wef★/mi/ # 名
-      - xform/★wd★/mi/ # fei飞键
-      - xform/★c★/f/ # 法
-      - xform/★f★/d/ # 的
-      - xform/★ef★/di/ # 地
-      - xform/★wf★/du/ # 对
-      - xform/★v★/t/ # 他
-      - xform/★dv★/ti/ # 条
-      - xform/★sv★/tu/ # 同
-      - xform/★g★/n/ # 那
-      - xform/★rg★/ni/ # 你
-      - xform/★eg★/nu/ # 弄
-      - xform/★qg★/nv/ # 女
-      - xform/★wg★/nv/ # fei飞键
-      - xform/★ar★/l/ # 了
-      - xform/★ae★/li/ # 两
-      - xform/★aw★/lu/ # 路
-      - xform/★ab★/lv/ # 率
-      - xform/★q★/g/ # 个
-      - xform/★qr★/gu/ # 过
-      - xform/★a★/k/ # 看
-      - xform/★af★/ku/ # 快
-      - xform/★z★/h/ # 和
-      - xform/★zv★/hu/ # 或
-      - xform/★w★/gi/ #j就
-      - xform/★t★/gv/ #ju句
-      - xform/★e★/ki/ # qi其
-      - xform/★sef★/kv/ # qu去
-      - xform/★at★/kv/ # fei飞键★qu去
-      - xform/★zx★/hi/ #小
-      - xform/★xv★/hv/ #学
-      - xform/★we★/zj/ # 这
-      - xform/★qe★/zju/ # 中
-      - xform/★qwe★/zju/ # fei飞键★中
-      - xform/★qt★/zju/ # fei飞键★中
-      - xform/★sd★/cj/ # 成
-      - xform/★ad★/cju/ # 出
-      - xform/★asd★/cju/ # fei飞键★出
-      - xform/★ag★/cju/ # fei飞键★出
-      - xform/★xc★/sj/ # 是
-      - xform/★zc★/sju/ # 说
-      - xform/★zxc★/sju/ # fei飞键★说
-      - xform/★zb★/sju/ # 说
-      - xform/★er★/r/ # 人
-      - xform/★wr★/ru/ # 如
-      - xform/★wer★/ru/ # fei飞键★如
-      - xform/★zf★/z/ # 在
-      - xform/★zd★/zu/ # 最
-      - xform/★sdv★/c/ # 才
-      - xform/★sc★/c/ # 才
-      - xform/★b★/cu/ # 从
-      #- xform/★sc★/cu/ # fei飞键★从
-      - xform/★sr★/s/ # 三
-      - xform/★sg★/s/ # fei飞键★三
-      - xform/★se★/su/ # 所
-      #★右手韵调,注意/需|
-      - xform/★p★/1/
-      - xform/★o★/2/
-      - xform/★i★/3/
-      - xform/★u★/4/
-      - xform|★/★|a1|
-      - xform/★\.★/a2/
-      - xform/★,★/a3/
-      - xform/★m★/a4/
-      - xform/★n;★/ai1/
-      - xform/★\.;★/ai2/
-      - xform/★nj★/ai2/ # fei飞键
-      - xform/★,l★/ai3/
-      - xform/★mkl★/ai3/ # fei飞键
-      - xform/★mk★/ai4/
-      - xform|★n/★|an1|
-      - xform/★nm★/an2/ # fei飞键
-      - xform|★\./★|an2|
-      - xform/★,\.★/an3/
-      - xform/★m,★/an4/
-      - xform|★m/★|ang1|
-      - xform/★n,★/ang2/
-      - xform|★,\./★|ang3|
-      - xform/★,/★/ang3/ # fei飞键
-      - xform/★io★/ang3/ # fei飞键
-      - xform/★m\.★/ang4/
-      - xform/★m,\.★/ang4/ # fei飞键
-      - xform/★m;★/ao1/
-      - xform/★nk★/ao2/
-      - xform/★n★/ao3/
-      - xform/★ml★/ao4/
-      - xform/★;★/e1/
-      - xform/★l★/e2/
-      - xform/★k★/e3/
-      - xform/★j★/e4/
-      - xform/★hp★/ei1/
-      - xform/★hu★/ei2/
-      - xform/★ko★/ei3/
-      - xform/★jio★/ei3/ # fei飞键
-      - xform/★ji★/ei4/
-      - xform/★h;★/en1/
-      - xform/★hj★/en2/
-      - xform/★kl★/en3/
-      - xform/★jk★/en4/
-      - xform/★j;★/eng1/
-      - xform/★hk★/eng2/
-      - xform/★kl;★/eng3/
-      - xform/★k;★/eng3/ # fei飞键
-      - xform/★ui★/eng3/ # fei飞键
-      - xform/★jl★/eng4/
-      - xform/★jkl★/eng4/ # fei飞键
-      - xform/★jp★/ou1/
-      - xform/★hi★/ou2/
-      - xform/★h★/ou3/
-      - xform/★jo★/ou4/
+      - xform/★zv★/rj/
+      - xform/★d★/rji/
+      - xform/★e★/rju/
+      - xform/★sd★/rjv/
+      - xform/★w★/b/
+      - xform/★sg★/bi/
+      - xform/★eg★/p/
+      - xform/★xg★/pi/
+      - xform/★c★/m/
+      - xform/★qf★/mi/
+      - xform/★t★/f/
+      - xform/★f★/d/
+      - xform/★xc★/di/
+      - xform/★cv★/du/
+      - xform/★af★/t/
+      - xform/★wf★/ti/
+      - xform/★zf★/tu/
+      - xform/★dg★/n/
+      - xform/★cf★/ni/
+      - xform/★se★/nu/
+      - xform/★xd★/nv/
+      - xform/★b★/l/
+      - xform/★x★/li/
+      - xform/★wg★/lu/
+      - xform/★as★/lv/
+      - xform/★sf★/g/
+      - xform/★v★/gu/
+      - xform/★xv★/k/
+      - xform/★cg★/ku/
+      - xform/★z★/h/
+      - xform/★er★/hu/
+      - xform/★a★/gi/
+      - xform/★sr★/gv/
+      - xform/★df★/ki/
+      - xform/★sv★/kv/
+      - xform/★r★/hi/
+      - xform/★dr★/hv/
+      - xform/★g★/zj/
+      - xform/★we★/zju/
+      - xform/★qr★/cj/
+      - xform/★dv★/cju/
+      - xform/★s★/sj/
+      - xform/★ag★/sju/
+      - xform/★wr★/r/
+      - xform/★qg★/ru/
+      - xform/★q★/z/
+      - xform/★ef★/zu/
+      - xform/★xf★/c/
+      - xform/★zg★/cu/
+      - xform/★av★/s/
+      - xform/★ar★/su/
+      # 右手韵调
+      - xform/★;★/1/
+      - xform/★u★/2/
+      - xform/★l★/3/
+      - xform/★j★/4/
+      - xform/★n★/a1/
+      - xform/★ul★/a2/
+      - xform/★mk★/a3/
+      - xform/★io★/a4/
+      - xform/★ho★/ai1/
+      - xform/★hl★/ai2/
+      - xform/★hi★/ai3/
+      - xform/★j;★/ai4/
+      - xform/★ui★/an1/
+      - xform|★/★|an2|
+      - xform/★m,★/an3/
+      - xform/★o★/an4/
+      - xform/★,\.★/ang1/
+      - xform/★ji★/ang2/
+      - xform/★jo★/ang3/
+      - xform/★uo★/ang4/
+      - xform/★j\.★/ao1/
+      - xform/★u;★/ao2/
+      - xform|★m/★|ao3|
+      - xform/★kl★/ao4/
+      - xform/★k★/e1/
+      - xform/★p★/e2/
+      - xform/★m★/e3/
+      - xform/★h★/e4/
+      - xform/★uk★/ei1/
+      - xform/★m;★/ei2/
+      - xform/★j,★/ei3/
+      - xform/★\.★/ei4/
+      - xform/★,★/en1/
+      - xform/★jl★/en2/
+      - xform/★jp★/en3/
+      - xform/★hk★/en4/
+      - xform/★i★/eng1/
+      - xform/★y★/eng2/
+      - xform/★h;★/eng3/
+      - xform/★jk★/eng4/
+      - xform|★j/★|ou1|
+      - xform/★ml★/ou2/
+      - xform/★up★/ou3/
+      - xform/★m\.★/ou4/
       - xlit/1234/wyxq/
     output_format:
       # 首先去除无效的并击组合
@@ -471,40 +335,21 @@ patch:
     '/iysmh': '》'
     '/iduh': '、'
     '/iwh': '？'
-#表情
-    '/ibq': [ 😂, 👀, 🤔, 😭, 🤣, 😀, 😁, 😃, 😄, 😅, 😆, 😉, 😊, 😋, 😎, 😍, 😘, 😗, 😙, 😚, ☺, 🙂, 🤗, 🤩,  🤨, 😐, 😑, 😶, 🙄, 😏, 😣, 😥, 😮, 🤐, 😯, 😪, 😫, 😴, 😌, 😛, 😜, 😝, 🤤, 😒, 😓, 😔, 😕, 🙃, 🤑, 😲, ☹, 🙁, 😖, 😞, 😟, 😤, 😢, 😦, 😧, 😨, 😩, 🤯, 😬, 😰, 😱, 😳, 🤪, 😵, 😠, 😡, 🤬, 😷, 🤒, 🤕, 🤢, 🤮, 🤧, 😇, 🤠, 🤡, 🤥, 🤫, 🤭, 🧐, 🤓 ]
-#數學
-    '/SX': [ ±, ÷, ×, ≈, ≦, ≧, ∈, ∏, ∑, ≮,  ≠, ≯, ∕, √, ∝, ∞, ⟨, ⟩, ∟, ∠, ∥, ∧, ∨, ∩, ∪, ∫, ∮, ∴, ∵, ∷, ∽, ≌, ≒, ≡, ≤, ≥, ⊕, ⊙, ⊥, ⊿, ㏑, ㏒ ]
-#單位
-    '/idw': [ Å, ℃, ％, ‰, ‱, °, ℉, ㏃, ㏆, ㎈, ㏄, ㏅, ㎝, ㎠, ㎤, ㏈, ㎗, ㎙, ㎓, ㎬, ㏉, ㏊, ㏋, ㎐, ㏌, ㎄, ㎅, ㎉, ㎏, ㎑, ㏍, ㎘, ㎞, ㏎, ㎢, ㎦, ㎪, ㏏, ㎸, ㎾, ㏀, ㏐, ㏓, ㎧, ㎨, ㎡, ㎥, ㎃, ㏔, ㎆, ㎎, ㎒, ㏕, ㎖, ㎜, ㎟, ㎣, ㏖, ㎫, ㎳, ㎷, ㎹, ㎽, ㎿, ㏁, ㎁, ㎋, ㎚, ㎱, ㎵, ㎻, ㏘, ㎩, ㎀, ㎊, ㏗, ㏙, ㏚, ㎰, ㎴, ㎺, ㎭, ㎮, ㎯, ㏛, ㏜, ㎔, ㏝, ㎂, ㎌, ㎍, ㎕, ㎛, ㎲, ㎶, ㎼ ]
 
-  editor/bindings/BackSpace: back_syllable # 退格鍵刪除一個拼音音節
-  key_binder/bindings/+:
-    - { when: has_menu, accept: 1, send: KP_1 } 
-    - { when: has_menu, accept: 2, send: KP_2 } 
-    - { when: has_menu, accept: 3, send: KP_3 } 
-    - { when: has_menu, accept: 4, send: KP_4 } 
-    - { when: has_menu, accept: 5, send: KP_5 } 
-    - { when: has_menu, accept: 6, send: KP_6 } 
-    - { when: has_menu, accept: 7, send: KP_7 } 
-    - { when: has_menu, accept: 8, send: KP_8 } 
-    - { when: has_menu, accept: 9, send: KP_9 } 
 
-  recognizer/patterns/punct: '^(//([0-9]+|[A-Za-z]+)|/([0-9]+|[A-Za-z]+))$'
-  recognizer/patterns/+:
-      expression: "^=.*$"
+
 
 拼读并击: 
   __append: 
-    - xform/^([a-z]+)(;.*)$/$1①$2/ # 未標調音節統一轉換為輕聲
+    - xform/^([a-z]+)(;.*)$/$1①$2/
     - xform/^(.*)ā(.*)(;.*)$/$1a$2①$3/
     - xform/^(.*)á(.*)(;.*)$/$1a$2②$3/
     - xform/^(.*)ǎ(.*)(;.*)$/$1a$2③$3/
     - xform/^(.*)à(.*)(;.*)$/$1a$2④$3/
-    - xform/^ō(;.*)$/o$2①$3/
-    - xform/^ó(;.*)$/o$2②$3/
-    - xform/^ǒ(;.*)$/o$2③$3/
-    - xform/^ò(;.*)$/o$2④$3/
+    - xform/^ō(;.*)$/ou$2①$3/
+    - xform/^ó(;.*)$/ou$2②$3/
+    - xform/^ǒ(;.*)$/ou$2③$3/
+    - xform/^ò(;.*)$/ou$2④$3/
     - xform/^(.*)ō(.*)(;.*)$/$1o$2①$3/
     - xform/^(.*)ó(.*)(;.*)$/$1o$2②$3/
     - xform/^(.*)ǒ(.*)(;.*)$/$1o$2③$3/
@@ -535,7 +380,6 @@ patch:
     - xform/^n(\d)(;.*)/en$1$2/
     - xform/^m(?=\d)/mu/
     - xform/^hm(?=\d)/hen/
-    #- xform/^o(?=\d)/o/
     - xform/^([yl]?)o(?=\d)/$1e/
     # 韵调变换
     - xform/(?<=[jqxy])u/$1v/
