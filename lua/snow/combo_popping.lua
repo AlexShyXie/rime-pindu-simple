@@ -32,7 +32,7 @@ function processor.func(key_event, env)
       context:commit()
       return incoming == "/" and snow.kNoop or snow.kAccepted
     elseif rime_api.regex_match(incoming, "[a-z]") then
-      if env.active and context:get_option("popping") then
+      if rime_api.regex_match(input, "([bpmfdtnlgkhzcsr]j?[iuv]?(a|ai|an|ang|ao|e|ei|en|eng|ou)?[wyxq][A-Z]?){2,}") then
         context:confirm_current_selection()
         context:commit()
       else
