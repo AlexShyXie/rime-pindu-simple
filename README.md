@@ -22,6 +22,9 @@
 > 万象方案的手动调频需要更新rime.dll
 > 方案里面一声和四声合并
 
+## 添加自定义user.dict
+哦没有o1的读音，但是常用语o1很常见。
+不没有bu2的读音，但是在词组中，bu2是非常常见的读音，因此添加bu2的读音进去。
 
 # 拼读简并
 拼读并击原始版：[https://github.com/zhanghaozhecn/rime-pindu-chord-type](https://github.com/zhanghaozhecn/rime-pindu-chord-type)

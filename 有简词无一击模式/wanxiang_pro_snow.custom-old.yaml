@@ -95,8 +95,8 @@ patch:
       - lua_translator@*shijian              #农历、日期、节气、节日、时间、周、问候模板等等，触发清单看下文
       - lua_translator@*unicode              #通过输入大写U引导，并输入Unicode编码获得汉字输出
       - lua_translator@*number_translator    #数字、金额大写，通过输入大写R1234获得候选输出
-      - lua_translator@*super_calculator     #超级计算器，Lua内查看高级用法
-      #- lua_translator@*calculator_translator
+      # - lua_translator@*super_calculator     #超级计算器，Lua内查看高级用法
+      - lua_translator@*calculator_translator
       - lua_translator@*input_statistics     #一个输入统计的脚本，以日、周、月、年等维度的统计
       - table_translator@custom_phrase       #自定义短语 custom_phrase.txt，用于置顶自定义编码候选词
       - table_translator@chengyu             #简码成语词汇表导入
@@ -265,26 +265,27 @@ patch:
       # - xform/^([qazwsxedcrfvtgb]+) $/v★$1★v/
       # - xform/^([yhnujmikolp]+) $/v$1$1v/
       # 左手并击，打出声介（一简字）
-      - xform/^([qazwsxedcrfvtgb]+)$/o★$1★ /
+      #- xform/^([qazwsxedcrfvtgb]+)$/o★$1★ /
+      - xform/^([qazwsxedcrfvtgb])$/★$1/ # 左手单键击键，其余的打出对应按键的字母并且不上屏
       # 左手并击带空格，打出声介的二选（一简词）
       - xform/^([qazwsxedcrfvtgb]+) $/o★$1★- /
 
       # 右手单键击键
-      - xform|^h$|/iduh | # '、'
-      - xform|^j$|/idh | # '，'
-      - xform|^k$|/ijh | # '。'
-      - xform|^l$|/iwh | # '？'
-      - xform|^l $|/ith | # '！'
-      - xform|^y$|- |
-      - xform|^u$|-- |
-      # - xform|^i$|iysyh | # '”'
-      - xform|^i$|--- |
-      - xform|^o$|---- |
-      - xform|^p$|----- |
-      # - xform|^p$|------ |
-      # 右手组合击键，打出对应的符号
-      - xform|^n$|{Page_Up}|
-      - xform|^m$|{Page_Down}|
+      # - xform|^h$|/iduh | # '、'
+      # - xform|^j$|/idh | # '，'
+      # - xform|^k$|/ijh | # '。'
+      # - xform|^l$|/iwh | # '？'
+      # - xform|^l $|/ith | # '！'
+      # - xform|^y$|- |
+      # - xform|^u$|-- |
+      # # - xform|^i$|iysyh | # '”'
+      # - xform|^i$|--- |
+      # - xform|^o$|---- |
+      # - xform|^p$|----- |
+      # # - xform|^p$|------ |
+      # # 右手组合击键，打出对应的符号
+      # - xform|^n$|{Page_Up}|
+      # - xform|^m$|{Page_Down}|
       - xform|^m,$|{Page_Up}| # '·'
       - xform|^,\.$|{Page_Down}| # 'emoji' 不加空格
       - xform|^m\.$|/ibq|
@@ -295,7 +296,7 @@ patch:
       # - xform|^io$|---- | 
       # - xform|^uo$|----- |
       # - xform|^up$|---- | 
-      - xform/^jl$/{BackSpace}/
+      - xform/^jl$/{Escape}/
       # - xform/^j;$/iwh /
       - xform/-/{Down}/
       # - xform/^hk$/{Page_Up}/
@@ -304,7 +305,8 @@ patch:
       #- xform|^★([qazwsxedcrfvtgb])★★jio★$|\U$1|
       # 右手+左手'wef'并击，打出辅助码
       #- xform|^★wef★★([polikujmyhn])★$|\U$1|
-
+      # 右手单键击键，其余的打出对应按键的字母并且不上屏
+      - xform/^([polikujmyhn])$/★$1/
       # 左手声介
       - xform/★r★/rj/ # 而
       - xform/★df★/rji/ # 其
@@ -447,6 +449,9 @@ patch:
       - xform/^(o?[bpmfdtnlgkhzcsr]j?[iuv]?)$/[$1]/
       # 辅助码的情况
       # - xform/^(v.+v)$/[$1]/
+      # i和单手击键的情况
+      - xform/^★([qazwsxedcrfvtgb])$/[$1]/
+      - xform/^★([polikujmyhn])$/[$1]/
       # 去除不合法音节
       - erase/^[a-z]+$/
       - xform/^\[(.+)\]/$1/
@@ -481,14 +486,6 @@ patch:
 #單位
     '/idw': [ ℃, ％, ‰, ‱, °, ℉, ㎜, ㎟, ㎣, ㎝, ㎠, ㎤, ㎡, ㎥, ㎏, ㎞, ㎢, ㎦, Å, ㏃, ㏆, ㎈, ㏄, ㏅, ㏈, ㎗, ㎙, ㎓, ㎬, ㏉, ㏊, ㏋, ㎐, ㏌, ㎄, ㎅, ㎉, ㎑, ㏍, ㎘, ㏎, ㎪, ㏏, ㎸, ㎾, ㏀, ㏐, ㏓, ㎧, ㎨, ㎃, ㏔, ㎆, ㎎, ㎒, ㏕, ㎖, ㏖, ㎫, ㎳, ㎷, ㎹, ㎽, ㎿, ㏁, ㎁, ㎋, ㎚, ㎱, ㎵, ㎻, ㏘, ㎩, ㎀, ㎊, ㏗, ㏙, ㏚, ㎰, ㎴, ㎺, ㎭, ㎮, ㎯, ㏛, ㏜, ㎔, ㏝, ㎂, ㎌, ㎍, ㎕, ㎛, ㎲, ㎶, ㎼ ]
 
-    '/A': [ā, á, ǎ, à, ȁ, â, ă, ȃ, ȧ, ä, å, ã, ₐ, ᵃ, ª, ⱥ, ꬰ, ả, ą, ạ, ḁ, ẚ, ấ, ầ, ẫ, ẩ, ắ, ằ, ẵ, ẳ, ǡ, ǟ, ǻ, ậ, ặ, ᶏ, ɐ, ᵄ, ɑ, ᵅ, ᶐ, ɒ, ᶛ, 𝐚, 𝑎, 𝒂, 𝒶, 𝓪, 𝔞, 𝖆, 𝕒, 𝖺, 𝗮, 𝘢, 𝙖, 𝚊, 𝐚, 𝑎, 𝒂, 𝒶, 𝓪, 𝔞, 𝖆, 𝕒, 𝖺, 𝗮, 𝘢, 𝙖, 𝚊]
-    '/E': [ē, é, ě, è, ȅ, ê, ĕ, ȇ, ė, ë, ẽ, ₑ, ᵉ, ɇ, ꬳ, ẻ, ȩ, ę, ḙ, ẹ, ḛ, ḗ, ḕ, ế, ề, ễ, ể, ḝ, ệ, ᶒ, ꬴ, ɘ, ə, ɚ, ᶕ, ɛ, ᵋ, ᶓ, ɜ, ᵌ, ᴈ, ᶟ, ɝ, ᶔ, ɞ, ʚ, ǝ, ₔ, ᵊ, ȝ, ⱸ, 𝐞, 𝑒, 𝒆, ℯ, 𝓮, 𝔢, 𝖊, 𝕖, 𝖾, 𝗲, 𝘦, 𝙚, 𝚎]
-    '/I': [ī, í, ǐ, ì, ȉ, î, ĭ, ȋ, ï, ĩ, ᵢ, ı, ɨ, ᶤ, ỉ, į, ị, ḭ, ᴉ, ᵎ, ḯ, ᶖ, ɩ, ᶥ, ᵼ, 𝐢, 𝑖, 𝒊, 𝒾, 𝓲, 𝔦, 𝖎, 𝕚, 𝗂, 𝗶, 𝘪, 𝙞, 𝚒]
-    '/O': [ō, ó, ǒ, ò, ő, ô, ŏ, ȯ, ö, õ, ₒ, ᵒ, º, ɔ, ᵓ, ᶗ, ꬿ, ø, ǫ, ọ, ơ, ɵ, ᶱ, ᴑ, ᴒ, ᴓ, ꝋ, ꝍ, ṓ, ṑ, ố, ồ, ỗ, ổ, ȱ, ȫ, ȭ, ṍ, ṏ, ộ, ǭ, ǿ, ớ, ờ, ỡ, ở, ợ, ɷ, ⱺ, ᴖ, ᵔ, ᴗ, ᵕ, 𝐨, 𝑜, 𝒐, ℴ, 𝓸, 𝔬, 𝖔, 𝕠, 𝗈, 𝗼, 𝘰, 𝙤, 𝚘]
-    '/U': [ū, ú, ǔ, ù, ű, ȕ, û, ŭ, ȗ, ü, ǖ, ǘ, ǚ, ǜ, ů, ũ, ᵤ, ᵘ, ʉ, ᶶ, ủ, ų, ṷ, ụ, ṳ, ṵ, ư, ʊ, ᶷ, ᵿ, ᶙ, ṻ, ṹ, ứ, ừ, ữ, ử, ự, ꭒ, ꭟ, ꝸ, ꭎ, ꭏ, ᴝ, ᵙ, ᴞ, 𝐮, 𝑢, 𝒖, 𝓊, 𝓾, 𝔲, 𝖚, 𝕦, 𝗎, 𝘂, 𝙪, 𝚞]
-
-  user_dict_set/enable_sentence: true
-  custom_phrase/enable_sentence: true
   editor/bindings/BackSpace: back_syllable # 退格鍵刪除一個拼音音節
   key_binder/bindings/+:
     - { when: has_menu, accept: 1, send: KP_1 } 
