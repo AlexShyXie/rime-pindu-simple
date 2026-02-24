@@ -14,7 +14,7 @@ patch:
       states: [ 中标, 英标 ]
     - name: popping
       states: [整句, 顶功]
-      reset: 0
+      reset: 1
     - name: full_shape                   #全角、半角字符输出
       states: [ 半角, 全角 ]
     - name: emoji                        #候选出现emoji滤镜，会显示在相应的候选后面，万象侧重于tips提示，避免候选被占用，因此默认为reset: 0，归属opencc emoji滤镜
@@ -65,7 +65,7 @@ patch:
   engine:
     processors:
       - ascii_composer                       #处理英文模式及中英文切换
-      - lua_processor@*super_processor       #KP小键盘、字母选词、符号快打、超强分词、重复限制、退格限制、声调回退、以词定字
+      # - lua_processor@*super_processor       #KP小键盘、字母选词、符号快打、超强分词、重复限制、退格限制、声调回退、以词定字
       # - lua_processor@*partial_commit        #通过ctrl+1~0局部提交10个字以内的句子的前几个字（一般为正确的前几个）使用时要遵循合理的分词结构能促进后续编码打出正确的词汇
       - lua_processor@*super_sequence*P      #手动排序，高亮候选 ctrl+j左移动 ctrl+k 右移动 ctrl+l 移除位移  ctrl+p 置顶
       - lua_processor@*super_tips            #超级提示模块：表情、简码、翻译、化学式、等等靠你想象
@@ -259,8 +259,10 @@ patch:
       - xform/^([qazwsxedcrfvtgb]+)op$/o★$1★------- /
       # 双手并击，打出音节
       - xform|^([qazwsxedcrfvtgb]+)([p;/ol.ik,ujmyhn]+)$|★$1★★$2★|
+      # 双手带空格并击，打出追加音节，这里 u 表示追加
+      - xform|^([qazwsxedcrfvtgb]+)([p;/ol.ik,ujmyhn]+) $|u★$1★★$2★|
       # 双手带空格并击，打出音节完整音节直接上屏，这里 o 表示追加
-      - xform|^([qazwsxedcrfvtgb]+)([p;/ol.ik,ujmyhn]+) $|o★$1★★$2★ |
+      # - xform|^([qazwsxedcrfvtgb]+)([p;/ol.ik,ujmyhn]+) $|o★$1★★$2★ |
       # 左手或右手带空格并击，打出辅助码)######################################(注释掉,使用万象的辅助码)
       # - xform/^([qazwsxedcrfvtgb]+) $/v★$1★v/
       # - xform/^([yhnujmikolp]+) $/v$1$1v/
@@ -283,19 +285,19 @@ patch:
       - xform|^p$|----- |
       # - xform|^p$|------ |
       # 右手组合击键，打出对应的符号
-      - xform|^n$|{Page_Up}|
-      - xform|^m$|{Page_Down}|
-      - xform|^m,$|{Page_Up}| # '·'
-      - xform|^,\.$|{Page_Down}| # 'emoji' 不加空格
+      - xform|^n$|{Escape}|
+      - xform|^m$|{BackSpace}|
+      - xform|^m,$|/dy| 
+      - xform|^,\.$|{Page_Down}| 
       - xform|^m\.$|/ibq|
       - xform|^m\/$|/idw|
-      - xform/^jk$/{Escape}/
+      - xform/^jk$/{Page_Up}/
       # - xform/^kl$/-- /
       # - xform|^ui$|--- |
       # - xform|^io$|---- | 
       # - xform|^uo$|----- |
       # - xform|^up$|---- | 
-      - xform/^jl$/{BackSpace}/
+      - xform/^jl$/{Page_Down}/
       # - xform/^j;$/iwh /
       - xform/-/{Down}/
       # - xform/^hk$/{Page_Up}/
@@ -364,8 +366,9 @@ patch:
       - xform/★wer★/ru/ # fei飞键★如
       - xform/★zf★/z/ # 在
       - xform/★zd★/zu/ # 最
-      - xform/★sdv★/c/ # 才
       - xform/★sc★/c/ # 才
+      - xform/★sdv★/c/ # fei飞键 才
+      - xform/★xd★/c/ # fei飞键 才
       - xform/★b★/cu/ # 从
       #- xform/★sc★/cu/ # fei飞键★从
       - xform/★sr★/s/ # 三
@@ -384,6 +387,7 @@ patch:
       - xform/★\.;★/ai2/
       - xform/★nj★/ai2/ # fei飞键
       - xform/★,l★/ai3/
+      - xform/★k\.★/ai3/ # fei飞键
       - xform/★mkl★/ai3/ # fei飞键
       - xform/★mk★/ai4/
       - xform|★n/★|an1|
@@ -411,6 +415,7 @@ patch:
       - xform/★hp★/ei1/
       - xform/★hu★/ei2/
       - xform/★ko★/ei3/
+      - xform/★il★/ei3/ # fei飞键
       - xform/★jio★/ei3/ # fei飞键
       - xform/★ji★/ei4/
       - xform/★h;★/en1/
@@ -486,6 +491,7 @@ patch:
     '/I': [ī, í, ǐ, ì, ȉ, î, ĭ, ȋ, ï, ĩ, ᵢ, ı, ɨ, ᶤ, ỉ, į, ị, ḭ, ᴉ, ᵎ, ḯ, ᶖ, ɩ, ᶥ, ᵼ, 𝐢, 𝑖, 𝒊, 𝒾, 𝓲, 𝔦, 𝖎, 𝕚, 𝗂, 𝗶, 𝘪, 𝙞, 𝚒]
     '/O': [ō, ó, ǒ, ò, ő, ô, ŏ, ȯ, ö, õ, ₒ, ᵒ, º, ɔ, ᵓ, ᶗ, ꬿ, ø, ǫ, ọ, ơ, ɵ, ᶱ, ᴑ, ᴒ, ᴓ, ꝋ, ꝍ, ṓ, ṑ, ố, ồ, ỗ, ổ, ȱ, ȫ, ȭ, ṍ, ṏ, ộ, ǭ, ǿ, ớ, ờ, ỡ, ở, ợ, ɷ, ⱺ, ᴖ, ᵔ, ᴗ, ᵕ, 𝐨, 𝑜, 𝒐, ℴ, 𝓸, 𝔬, 𝖔, 𝕠, 𝗈, 𝗼, 𝘰, 𝙤, 𝚘]
     '/U': [ū, ú, ǔ, ù, ű, ȕ, û, ŭ, ȗ, ü, ǖ, ǘ, ǚ, ǜ, ů, ũ, ᵤ, ᵘ, ʉ, ᶶ, ủ, ų, ṷ, ụ, ṳ, ṵ, ư, ʊ, ᶷ, ᵿ, ᶙ, ṻ, ṹ, ứ, ừ, ữ, ử, ự, ꭒ, ꭟ, ꝸ, ꭎ, ꭏ, ᴝ, ᵙ, ᴞ, 𝐮, 𝑢, 𝒖, 𝓊, 𝓾, 𝔲, 𝖚, 𝕦, 𝗎, 𝘂, 𝙪, 𝚞]
+    '/dy': [原来如此]
 
   user_dict_set/enable_sentence: true
   custom_phrase/enable_sentence: true
@@ -500,7 +506,7 @@ patch:
     - { when: has_menu, accept: 7, send: KP_7 } 
     - { when: has_menu, accept: 8, send: KP_8 } 
     - { when: has_menu, accept: 9, send: KP_9 } 
-
+  menu/page_size: 3 #候选项数
   recognizer/patterns/punct: '^(//([0-9]+|[A-Za-z]+)|/([0-9]+|[A-Za-z]+))$'
   recognizer/patterns/+:
       expression: "^=.*$"
