@@ -277,18 +277,18 @@ patch:
       - xform|^k$|/ijh | # '。'
       - xform|^l$|/iwh | # '？'
       - xform|^l $|/ith | # '！'
-      - xform|^y$|- |
-      - xform|^u$|-- |
-      # - xform|^i$|iysyh | # '”'
-      - xform|^i$|--- |
-      - xform|^o$|---- |
-      - xform|^p$|----- |
+      - xform|^y$|/dy|
+      - xform|^y $|/dy |
+      - xform|^u$|- |
+      - xform|^i$|-- |
+      - xform|^o$|/dy  |
+      - xform|^p$|/dy  |
       # - xform|^p$|------ |
       # 右手组合击键，打出对应的符号
       - xform|^n$|{Escape}|
       - xform|^m$|{BackSpace}|
       - xform|^m,$|/dy| 
-      - xform|^,\.$|{Page_Down}| 
+      - xform|^,\.$|/dy| 
       - xform|^m\.$|/ibq|
       - xform|^m\/$|/idw|
       - xform/^jk$/{Page_Up}/
