@@ -414,6 +414,7 @@ patch:
       - xform/★k★/e3/
       - xform/★j★/e4/
       - xform/★hp★/ei1/
+      - xform/★y;★/ei1/ # fei飞键
       - xform/★hu★/ei2/
       - xform/★ko★/ei3/
       - xform/★il★/ei3/ # fei飞键
@@ -433,6 +434,7 @@ patch:
       - xform/★jl★/eng4/
       - xform/★jkl★/eng4/ # fei飞键
       - xform/★jp★/ou1/
+      - xform/★u;★/ou1/ # fei飞键
       - xform/★hi★/ou2/
       - xform/★h★/ou3/
       - xform/★jo★/ou4/
