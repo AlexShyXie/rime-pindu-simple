@@ -281,8 +281,8 @@ patch:
       - xform|^y $|/dy |
       - xform|^u$|- |
       - xform|^i$|-- |
-      - xform|^o$|/dy  |
-      - xform|^p$|/dy  |
+      - xform|^o$|/dy- |
+      - xform|^p$|/dy-- |
       # - xform|^p$|------ |
       # 右手组合击键，打出对应的符号
       - xform|^n$|{Escape}|
