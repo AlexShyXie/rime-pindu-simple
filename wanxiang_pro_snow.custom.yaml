@@ -398,7 +398,7 @@ patch:
       - xform/★m,★/an4/
       - xform|★m/★|ang1|
       - xform/★n,★/ang2/
-      - xform|★k/★|ang2| # fei飞键
+      - xform/★nl★/ang2/ # fei飞键
       - xform|★,\./★|ang3|
       - xform|★,/★|ang3| # fei飞键
       - xform/★io★/ang3/ # fei飞键
@@ -425,7 +425,7 @@ patch:
       - xform/★jk★/en4/
       - xform/★j;★/eng1/
       - xform/★hk★/eng2/
-      - xform/★i;★/eng2/ # fei飞键
+      - xform/★ho★/eng2/ # fei飞键
       - xform/★kl;★/eng3/
       - xform/★k;★/eng3/ # fei飞键
       - xform/★ui★/eng3/ # fei飞键
