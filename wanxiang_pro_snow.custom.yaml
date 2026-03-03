@@ -251,8 +251,8 @@ patch:
     alphabet: "qazwsxedcrfvtgbyhnujmik,ol.p;/' "
     algebra:
       # 左手并击Y，打出声介的三四五六选
-      - xform/^([qazwsxedcrfvtgb]+)'$/o★$1★-- /
-      - xform/^([qazwsxedcrfvtgb]+)uo$/o★$1★--- /
+      - xform/^([qazwsxedcrfvtgb]+)y$/o★$1★-- /
+      - xform/^([qazwsxedcrfvtgb]+)'$/o★$1★--- /
       - xform/^([qazwsxedcrfvtgb]+)yp$/o★$1★---- /
       - xform/^([qazwsxedcrfvtgb]+)up$/o★$1★----- /
       - xform/^([qazwsxedcrfvtgb]+)ip$/o★$1★------ /
@@ -315,6 +315,7 @@ patch:
       - xform/★sdf★/rjv/ # 与
       - xform/★s★/b/ # 不
       - xform/★qf★/bi/ # 并
+      - xform/★at★/bi/ # fei飞键
       - xform/★x★/p/ # 跑
       - xform/★av★/pi/ # 批
       - xform/★d★/m/ # 们
@@ -346,7 +347,6 @@ patch:
       - xform/★t★/gv/ #ju句
       - xform/★e★/ki/ # qi其
       - xform/★sef★/kv/ # qu去
-      - xform/★at★/kv/ # fei飞键★qu去
       - xform/★zx★/hi/ #小
       - xform/★xv★/hv/ #学
       - xform/★we★/zj/ # 这
@@ -376,7 +376,7 @@ patch:
       - xform/★se★/su/ # 所
       #★右手韵调,注意/需|
       - xform/★p★/1/
-      - xform/★y★/1/ # fei飞键
+      - xform/★uo★/1/ # fei飞键
       - xform/★o★/2/
       - xform/★i★/3/
       - xform/★u★/4/

@@ -31,6 +31,7 @@ switches:
 
 engine:
   processors:
+    - lua_processor@*super_processor       #KP小键盘、字母选词、符号快打、超强分词、重复限制、退格限制、声调回退、以词定字
     - ascii_composer
     # - chord_composer 并击的
     - recognizer
@@ -143,3 +144,35 @@ style:
   inline_preedit: true #输入码内嵌
   layout:
     min_width: 70
+
+# a/、单字母组合，触发预设编码自动上屏快符，支持将值设为"repeat" 以支持对应按键重复上屏功能，custom>schema>lua最终合并键值
+# 现在就支持26字母快符，结合成对符号输入，这边的压力小一些
+quick_symbol_text:
+  trigger: "^([a-z])/$"
+  symkey:
+    q: "repeat"
+    w: "？"
+    e: "（"
+    r: "）"
+    t: "~"
+    y: "·"
+    u: "_"
+    i: "』"
+    o: "〖"
+    p: "〗"
+    a: "！"
+    s: "……"
+    d: "."
+    f: "“"
+    g: "”"
+    h: "‘"
+    j: "’"
+    k: "【"
+    l: "】"
+    z: "。”"
+    x: "？”"
+    c: "！”"
+    v: "——"
+    b: "%"
+    n: "《"
+    m: "》"
