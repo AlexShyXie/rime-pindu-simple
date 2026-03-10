@@ -13,7 +13,7 @@ schema:
     - flypydz
 
 punctuator:
-  digit_separators: ""  #数字分隔符
+  digit_separators: ":,."  #数字分隔符
   __include: wanxiang_symbols:/symbol_table         # 从 symbols.yaml 导入配置
 
 switches:
@@ -31,7 +31,7 @@ switches:
 
 engine:
   processors:
-    - lua_processor@*super_processor       #KP小键盘、字母选词、符号快打、超强分词、重复限制、退格限制、声调回退、以词定字
+    - lua_processor@*quick_symbol       #符号快打
     - ascii_composer
     # - chord_composer 并击的
     - recognizer
