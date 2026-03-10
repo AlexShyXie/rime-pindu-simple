@@ -14,7 +14,7 @@ patch:
       states: [ 中标, 英标 ]
     - name: popping
       states: [整句, 顶功]
-      reset: 1
+      reset: 0
     - name: full_shape                   #全角、半角字符输出
       states: [ 半角, 全角 ]
     - name: emoji                        #候选出现emoji滤镜，会显示在相应的候选后面，万象侧重于tips提示，避免候选被占用，因此默认为reset: 0，归属opencc emoji滤镜
@@ -252,37 +252,37 @@ patch:
     algebra:
       # 左手并击Y，打出声介的三四五六选
       - xform/^([qazwsxedcrfvtgb]+)y$/o★$1★-- /
-      - xform/^([qazwsxedcrfvtgb]+)'$/o★$1★--- /
-      - xform/^([qazwsxedcrfvtgb]+)yp$/o★$1★---- /
-      - xform/^([qazwsxedcrfvtgb]+)up$/o★$1★----- /
-      - xform/^([qazwsxedcrfvtgb]+)ip$/o★$1★------ /
-      - xform/^([qazwsxedcrfvtgb]+)op$/o★$1★------- /
+      #- xform/^([qazwsxedcrfvtgb]+)'$/o★$1★--- /
+      - xform/^([qazwsxedcrfvtgb]+)yp$/o★$1★--- /
+      - xform/^([qazwsxedcrfvtgb]+)up$/o★$1★---- /
+      - xform/^([qazwsxedcrfvtgb]+)ip$/o★$1★----- /
+      - xform/^([qazwsxedcrfvtgb]+)op$/o★$1★------ /
       # 双手并击，打出音节
       - xform|^([qazwsxedcrfvtgb]+)([p;/ol.ik,ujmyhn]+)$|★$1★★$2★|
       # 双手带空格并击，打出追加音节，这里 u 表示追加
-      - xform|^([qazwsxedcrfvtgb]+)([p;/ol.ik,ujmyhn]+) $|u★$1★★$2★|
+      # - xform|^([qazwsxedcrfvtgb]+)([p;/ol.ik,ujmyhn]+) $|u★$1★★$2★|
       # 双手带空格并击，打出音节完整音节直接上屏，这里 o 表示追加
-      # - xform|^([qazwsxedcrfvtgb]+)([p;/ol.ik,ujmyhn]+) $|o★$1★★$2★ |
+      - xform|^([qazwsxedcrfvtgb]+)([p;/ol.ik,ujmyhn]+) $|o★$1★★$2★ |
       # 左手或右手带空格并击，打出辅助码)######################################(注释掉,使用万象的辅助码)
       # - xform/^([qazwsxedcrfvtgb]+) $/v★$1★v/
       # - xform/^([yhnujmikolp]+) $/v$1$1v/
       # 左手并击，打出声介（一简字）
       - xform/^([qazwsxedcrfvtgb]+)$/o★$1★ /
       # 左手并击带空格，打出声介的二选（一简词）
-      - xform/^([qazwsxedcrfvtgb]+) $/o★$1★- /
-
+      - xform/^([qazwsxedcrfvtgb]+)'$/o★$1★- /
+      - xform/^([qazwsxedcrfvtgb]) $/\u$1/
+      - xform/^([polikujmyhn]) $/\u$1/
       # 右手单键击键
       - xform|^h$|/iduh | # '、'
       - xform|^j$|/idh | # '，'
       - xform|^k$|/ijh | # '。'
       - xform|^l$|/iwh | # '？'
-      - xform|^l $|/ith | # '！'
+      #- xform|^l $|/ith | # '！'
       - xform|^y$|/dy|
-      - xform|^y $|/dy |
       - xform|^u$|- |
       - xform|^i$|-- |
-      #- xform|^o$|/dy- |
-      #- xform|^p$|/dy-- |
+      - xform|^o$|/dy- |
+      - xform|^p$|/ith |
       # - xform|^p$|------ |
       # 右手组合击键，打出对应的符号
       - xform|^n$|{Escape}|
@@ -338,7 +338,10 @@ patch:
       - xform/★aw★/lu/ # 路
       - xform/★ab★/lv/ # 率
       - xform/★q★/g/ # 个
+      - xform/★ag★/g/ # fei飞键
       - xform/★qr★/gu/ # 过
+      - xform/★rt★/gu/ # fei飞键
+      - xform/★et★/gu/ # fei飞键
       - xform/★a★/k/ # 看
       - xform/★af★/ku/ # 快
       - xform/★z★/h/ # 和
@@ -356,7 +359,7 @@ patch:
       - xform/★sd★/cj/ # 成
       - xform/★ad★/cju/ # 出
       - xform/★asd★/cju/ # fei飞键★出
-      - xform/★ag★/cju/ # fei飞键★出
+      # - xform/★ag★/cju/ # fei飞键★出
       - xform/★xc★/sj/ # 是
       - xform/★zc★/sju/ # 说
       - xform/★zxc★/sju/ # fei飞键★说
