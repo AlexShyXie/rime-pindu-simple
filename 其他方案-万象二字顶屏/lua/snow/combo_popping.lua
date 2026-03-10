@@ -19,9 +19,10 @@ function processor.func(key_event, env)
   local context = env.engine.context
   
   -- 1. 过滤功能键和修饰键
-  if key_event:release() or key_event:alt() or key_event:shift() or key_event:ctrl() or key_event:caps() or key_event:plus() or key_event:minus()then
-    return snow.kNoop
+  if key_event:release() or key_event:alt() or key_event:shift() or key_event:ctrl() or key_event:caps() then
+      return snow.kNoop
   end
+
 
   -- 2. 关键修复：如果是删除键(Backspace)，直接返回，不进行顶屏判断
   -- 这样删除键才能正常工作，不会被误判为顶屏
@@ -29,19 +30,31 @@ function processor.func(key_event, env)
     return snow.kNoop
   end
 
-  local input = snow.current(context) or ""
   local incoming = utf8.char(key_event.keycode)
+  local input = snow.current(context) or ""
 
-  -- 3. 如果包含特殊符号，不限制，直接放行
-  -- 2. 【关键修改】优先判断符号，直接放行并重置状态
-  -- 使用 incoming 匹配当前按键，而不是 input
+  -- 3. 符号和翻页键处理 (保持不变，这是对的)
   if rime_api.regex_match(incoming, "[`;/\\\\ ]+") then
-    env.active = true  -- 恢复初始状态，准备下一次输入
-    return snow.kNoop  -- 放行，让 Rime 默认处理这个符号
+    env.active = true
+    return snow.kNoop
   end
+  
   if rime_api.regex_match(incoming, "[7890]") then
-      return snow.kNoop
+    return snow.kNoop
   end
+
+  -- 【核心修改】：判断是否为翻页键
+  local is_page_key = (incoming == "-" or incoming == "=")
+  
+  -- 如果是翻页键，并且当前正在输入中
+  if is_page_key and context:is_composing() then
+    -- 【关键点】直接返回，完全跳过后面的顶屏逻辑
+    -- 这样按键就会顺利传给 key_binder 执行翻页
+    env.active=false
+    return snow.kNoop
+  end
+  
+  
   if env.active then
     -- 4. 修正后的正则：支持数字声调(7890)的顶屏逻辑
     -- 注意：以下正则假设前两位为基础双拼编码
