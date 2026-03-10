@@ -19,7 +19,7 @@ function processor.func(key_event, env)
   local context = env.engine.context
   
   -- 1. 过滤功能键和修饰键
-  if key_event:release() or key_event:alt() or key_event:shift() or key_event:ctrl() or key_event:caps() then
+  if key_event:release() or key_event:alt() or key_event:shift() or key_event:ctrl() or key_event:caps() or key_event:plus() or key_event:minus()then
     return snow.kNoop
   end
 
