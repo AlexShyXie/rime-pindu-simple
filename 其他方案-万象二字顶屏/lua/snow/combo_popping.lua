@@ -45,16 +45,13 @@ function processor.func(key_event, env)
   if env.active then
     -- 4. 修正后的正则：支持数字声调(7890)的顶屏逻辑
     -- 注意：以下正则假设前两位为基础双拼编码
-    local match1, match2, match3
+    local match2, match3
 
-    match1 = rime_api.regex_match(input, "^[a-z]{2}[7890]?[a-z]{2}[7890]?")
+    match2 = rime_api.regex_match(input, "^[a-z]{2}[7890]?[A-Z]{0,2}[a-z]{2}[7890]?[A-Z]{0,2}")
 
-    match2 = rime_api.regex_match(input, "^[a-z]{2}[7890]?[A-Z]?[a-z]{2}[7890]?[A-Z]?")
+    match3 = rime_api.regex_match(input, "^[a-z]{2}[A-Z]{0,2}[7890]?[a-z]{2}[A-Z]{0,2}[7890]?")
 
-    match3 = rime_api.regex_match(input, "^[a-z]{2}[A-Z]?[7890]?[a-z]{2}[A-Z]?[7890]?")
-
-
-    if match1 or match2 or match3 then
+    if match2 or match3 then
       context:confirm_current_selection()
       context:commit()
     end
