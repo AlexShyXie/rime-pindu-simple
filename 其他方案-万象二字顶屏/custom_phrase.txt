@@ -36702,9 +36702,8 @@
 奏乐	zzyt	20
 走运	zzyy	20
 走走	zzzz	20
-知道	vd	19
-是不是	ubu	19
-越来越	yly	19
+
+
 为什么	wum	19
 输入法	urf	20
 课件	kejm	19
