@@ -43,15 +43,20 @@ function processor.func(key_event, env)
     return snow.kNoop
   end
 
-  -- 【核心修改】：判断是否为翻页键
-  local is_page_key = (incoming == "-" or incoming == "=")
-  
-  -- 如果是翻页键，并且当前正在输入中
-  if is_page_key and context:is_composing() then
-    -- 【关键点】直接返回，完全跳过后面的顶屏逻辑
-    -- 这样按键就会顺利传给 key_binder 执行翻页
-    env.active=false
-    return snow.kNoop
+  -- 【核心修改】：判断是否为翻页键或方向键
+  -- 方向键键码: Left=0xFF51, Up=0xFF52, Right=0xFF53, Down=0xFF54
+  local is_navigation_key = (incoming == "-" or incoming == "=" or 
+                             key_event.keycode == 0xFF51 or 
+                             key_event.keycode == 0xFF52 or 
+                             key_event.keycode == 0xFF53 or 
+                             key_event.keycode == 0xFF54)
+
+  -- 如果是功能键，并且当前正在输入中
+  if is_navigation_key and context:is_composing() then
+      -- 【关键点】直接返回，完全跳过后面的顶屏逻辑
+      -- 这样按键就会顺利传给 key_binder 执行翻页或移动光标
+      env.active=false
+      return snow.kNoop
   end
   
   
